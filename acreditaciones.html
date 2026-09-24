@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acreditaciones y Aprobaciones | Grupo Thera</title>
+  <meta name="description" content="Acreditaciones oficiales, aprobaciones normativas y respaldos técnicos de Welfare Ecología Industrial y Precisión Instrumental Aplicada.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos específicos para tablas de acreditación dentro del contenedor global */
+    .acred-table-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+    .acred-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+      background: #ffffff;
+      font-size: 14px;
+    }
+    .acred-table th {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    .acred-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #374151;
+      vertical-align: top;
+    }
+    .acred-table tr:last-child td {
+      border-bottom: none;
+    }
+    .acred-table td:nth-child(1),
+    .acred-table td:nth-child(2) {
+      font-weight: 600;
+      color: #111827;
+    }
+    .doc-link {
+      color: #106a9b;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .doc-link:hover {
+      text-decoration: underline;
+    }
+    .doc-link::after {
+      content: ' ↗';
+    }
+    .note-box {
+      background: #f0fdf4;
+      border-left: 4px solid #10b981;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      color: #166534;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header style="position:sticky; top:0; z-index:1000; background:#ffffff; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI', Arial, sans-serif;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:76px;">
+
+      <!-- LOGO -->
+      <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+        <img src="assets/GRUPO-THERA.png" alt="Grupo Thera Logo" style="height:44px; width:auto; display:block;">
+      </a>
+
+      <!-- NAV TOGGLE (mobile) -->
+      <input type="checkbox" id="nav-toggle" style="display:none;">
+      <label for="nav-toggle" style="display:none; cursor:pointer;">
+        <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+        <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+        <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+      </label>
+
+      <!-- MAIN NAV -->
+      <nav>
+        <ul style="display:flex; align-items:center; gap:8px; list-style:none; margin:0; padding:0;">
+
+          <li>
+            <a href="index.html" style="display:block; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">Inicio</a>
+          </li>
+
+          <!-- SOLUCIONES -->
+          <li style="position:relative;"
+              onmouseenter="document.getElementById('drop-soluciones').style.display='block';"
+              onmouseleave="document.getElementById('drop-soluciones').style.display='none';">
+
+            <a href="servicios.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+              Soluciones <span style="font-size:11px;">▾</span>
+            </a>
+
+            <div id="drop-soluciones" style="display:none; position:absolute; top:100%; left:0; width:240px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+              <a href="agua.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Agua</a>
+              <a href="aire.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Aire</a>
+              <a href="metrologia.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Metrología</a>
+              <a href="ingenieria.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Ingeniería e Instrumentación</a>
+            </div>
+          </li>
+
+          <!-- INDUSTRIAS -->
+          <li style="position:relative;"
+              onmouseenter="document.getElementById('drop-industrias').style.display='block';"
+              onmouseleave="document.getElementById('drop-industrias').style.display='none';">
+
+            <a href="industrias.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+              Industrias <span style="font-size:11px;">▾</span>
+            </a>
+
+            <div id="drop-industrias" style="display:none; position:absolute; top:100%; left:0; width:240px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+              <a href="industrias.html#alimentos" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Alimentos y bebidas</a>
+              <a href="industrias.html#farma" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Farmacéutica</a>
+              <a href="industrias.html#quimica" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Química</a>
+              <a href="industrias.html#manufactura" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Manufactura</a>
+              <a href="industrias.html" style="display:block; padding:10px 12px; border-radius:6px; color:#0ea5a4; text-decoration:none; font-size:14px; font-weight:600;">Ver todas →</a>
+            </div>
+          </li>
+
+          <!-- GRUPO THERA -->
+          <li style="position:relative;"
+              onmouseenter="document.getElementById('drop-grupo').style.display='block';"
+              onmouseleave="document.getElementById('drop-grupo').style.display='none';">
+
+            <a href="quienessomos.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+              Grupo Thera <span style="font-size:11px;">▾</span>
+            </a>
+
+            <div id="drop-grupo" style="display:none; position:absolute; top:100%; left:0; width:280px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+              <div style="padding:8px 12px 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:#9ca3af;">Nosotros</div>
+              <a href="quienessomos.html#mision" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Misión, visión y valores</a>
+              <a href="quienessomos.html#trayectoria" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Trayectoria</a>
+              <a href="quienessomos.html#equipo" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Equipo</a>
+              <div style="height:1px; background:#e5e7eb; margin:6px 8px;"></div>
+              <a href="empresas-grupo.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Empresas del grupo</a>
+              <a href="acreditaciones.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Acreditaciones y aprobaciones</a>
+              <a href="testimonios.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Experiencias y testimonios</a>
+            </div>
+          </li>
+
+          <li>
+            <a href="recursos.html" style="display:block; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">Recursos</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- HEADER ACTIONS -->
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button aria-label="Buscar" style="background:none; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; color:#1f2937;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <a href="contacto.html" style="background:#106a9b; color:#ffffff; text-decoration:none; font-size:14px; font-weight:600; padding:11px 22px; border-radius:8px;">Contáctanos</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <div class="badge-tag">Transparencia y Respaldo Técnico</div>
+        <h1>Acreditaciones y <span style="background: linear-gradient(90deg, #0a3458, #3cb4d5, #6fbcfc); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">aprobaciones</span></h1>
+        <p class="hero-text">
+          Conoce las capacidades reconocidas oficialmente de nuestras empresas y los alcances normativos que respaldan la calidad y validez legal de nuestros servicios.
+        </p>
+        <div class="hero-actions">
+          <a href="#welfare" class="btn btn-accent">Welfare Ecología</a>
+          <a href="#pia" class="btn btn-outline">Precisión Instrumental</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image">
+          <img src="assets/UM-32.jpg" alt="Acreditaciones y Calidad Grupo Thera" width="600" height="400">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- SECCIÓN LOGOS ORGANISMOS / ACREDITADORES -->
+  <section style="background: #f9fafb; padding: 40px 0; border-bottom: 1px solid #e5e7eb;">
+    <div class="container" style="text-align: center;">
+      <p class="eyebrow center" style="margin-bottom: 8px;">Respaldo y Certificación</p>
+      <h2 class="center" style="font-size: 1.5rem; margin-bottom: 28px;">Organismos que nos acreditan</h2>
+
+      <!-- Slider Container -->
+      <div style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 12px; background: #ffffff; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+        
+        <!-- Track con las diapositivas -->
+        <div id="logo-slider-track" style="display: flex; transition: transform 0.5s ease-in-out; width: 100%;">
+          
+          <!-- Slide 1 -->
+          <div style="min-width: 100%; box-sizing: border-box; padding: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+            <img src="assets/EMA-logo.png" alt="Entidad Mexicana de Acreditación (EMA)" style="max-height: 90px; width: auto; object-fit: contain;">
+            <p style="font-size: 0.9rem; font-weight: 600; color: #374151; margin: 0;">Entidad Mexicana de Acreditación (EMA)</p>
+          </div>
+
+          <!-- Slide 2 -->
+          <div style="min-width: 100%; box-sizing: border-box; padding: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+            <img src="assets/PROFEPA-logo.png" alt="Procuraduría Federal de Protección al Ambiente (PROFEPA)" style="max-height: 90px; width: auto; object-fit: contain;">
+            <p style="font-size: 0.9rem; font-weight: 600; color: #374151; margin: 0;">Procuraduría Federal de Protección al Ambiente (PROFEPA)</p>
+          </div>
+
+          <!-- Slide 3 -->
+          <div style="min-width: 100%; box-sizing: border-box; padding: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+            <img src="assets/GOBMEX_CONAGUA.png" alt="Comisión Nacional del Agua (CONAGUA)" style="max-height: 90px; width: auto; object-fit: contain;">
+            <p style="font-size: 0.9rem; font-weight: 600; color: #374151; margin: 0;">Comisión Nacional del Agua (CONAGUA)</p>
+          </div>
+
+        </div>
+
+        <!-- Botones de Navegación -->
+        <button onclick="moveLogoSlide(-1)" aria-label="Anterior" style="position: absolute; top: 50%; left: 12px; transform: translateY(-50%); background: #ffffff; border: 1px solid #d1d5db; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1f2937; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">❮</button>
+        <button onclick="moveLogoSlide(1)" aria-label="Siguiente" style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); background: #ffffff; border: 1px solid #d1d5db; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1f2937; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">❯</button>
+
+        <!-- Indicadores (puntos) -->
+        <div style="display: flex; justify-content: center; gap: 8px; padding-bottom: 16px;">
+          <span class="slider-dot" onclick="setLogoSlide(0)" style="width: 10px; height: 10px; border-radius: 50%; background-color: #106a9b; cursor: pointer; display: inline-block;"></span>
+          <span class="slider-dot" onclick="setLogoSlide(1)" style="width: 10px; height: 10px; border-radius: 50%; background-color: #d1d5db; cursor: pointer; display: inline-block;"></span>
+          <span class="slider-dot" onclick="setLogoSlide(2)" style="width: 10px; height: 10px; border-radius: 50%; background-color: #d1d5db; cursor: pointer; display: inline-block;"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LÓGICA DEL SLIDER -->
+  <script>
+    let currentLogoSlide = 0;
+    const totalLogoSlides = 3;
+    const sliderTrack = document.getElementById('logo-slider-track');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function updateSlider() {
+      sliderTrack.style.transform = `translateX(-${currentLogoSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.style.backgroundColor = index === currentLogoSlide ? '#106a9b' : '#d1d5db';
+      });
+    }
+
+    function moveLogoSlide(direction) {
+      currentLogoSlide = (currentLogoSlide + direction + totalLogoSlides) % totalLogoSlides;
+      updateSlider();
+    }
+
+    function setLogoSlide(index) {
+      currentLogoSlide = index;
+      updateSlider();
+    }
+
+    // Rotación automática cada 4 segundos
+    setInterval(() => {
+      moveLogoSlide(1);
+    }, 4000);
+  </script>
+
+  <!-- SECCIÓN DE ACREDITACIONES Y CONTENIDO -->
+  <main class="container" style="padding-top: 54px; padding-bottom: 76px;">
+
+    <!-- WELFARE ECOLOGÍA INDUSTRIAL -->
+    <section id="welfare" class="company" style="margin-bottom: 58px;">
+      <p class="eyebrow">Laboratorio de Ensayo</p>
+      <h2>Welfare Ecología Industrial S.A. de C.V.</h2>
+      <p style="color: #4b5563; font-size: 1.05rem; margin-top: 4px; margin-bottom: 24px;">
+        Laboratorio de ensayo para fuentes fijas y agua, con aprobaciones oficiales para la evaluación de la conformidad.
+      </p>
+
+      <!-- Acreditaciones Welfare -->
+      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid #106a9b; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+        <h3 style="margin: 0 0 16px 0; font-size: 1.25rem; color: #111827;">Acreditaciones</h3>
+        <div class="acred-table-wrap">
+          <table class="acred-table">
+            <thead>
+              <tr>
+                <th>Organismo</th>
+                <th>Número</th>
+                <th>Alcance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EMA</td>
+                <td>FF-0079-011/11</td>
+                <td>Acreditación como Laboratorio de Ensayo bajo ISO/IEC 17025 para actividades dentro del alcance acreditado en fuentes fijas.</td>
+              </tr>
+              <tr>
+                <td>EMA</td>
+                <td>AG-0080-011/11</td>
+                <td>Acreditación como Laboratorio de Ensayo bajo ISO/IEC 17025 para pruebas dentro del alcance acreditado en agua.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Aprobaciones Oficiales Welfare -->
+      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid #106a9b; border-radius: 8px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+        <h3 style="margin: 0 0 16px 0; font-size: 1.25rem; color: #111827;">Aprobaciones oficiales</h3>
+        <div class="acred-table-wrap">
+          <table class="acred-table">
+            <thead>
+              <tr>
+                <th>Autoridad</th>
+                <th>Número</th>
+                <th>Alcance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PROFEPA</td>
+                <td>PFPA-APR-LP-FF-006/2025</td>
+                <td>Aprobación para realizar evaluación de la conformidad en fuentes fijas, conforme al alcance y disposiciones aplicables.</td>
+              </tr>
+              <tr>
+                <td>PROFEPA</td>
+                <td>PFPA-APR-LP-RUIDO-088/2022</td>
+                <td>Aprobación para realizar evaluación de la conformidad en materia de ruido, de acuerdo con el alcance autorizado.</td>
+              </tr>
+              <tr>
+                <td>CONAGUA</td>
+                <td>CNA-GCA-3089</td>
+                <td>Aprobación para realizar evaluación de la conformidad en calidad del agua, conforme al alcance aplicable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECISIÓN INSTRUMENTAL APLICADA -->
+    <section id="pia" class="company" style="margin-bottom: 58px;">
+      <p class="eyebrow">Laboratorio de Calibración</p>
+      <h2>Precisión Instrumental Aplicada</h2>
+      <p style="color: #4b5563; font-size: 1.05rem; margin-top: 4px; margin-bottom: 24px;">
+        Especialistas en metrología legal y ambiental para analizadores de proceso, opacidad y gases.
+      </p>
+
+      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid #106a9b; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+        <h3 style="margin: 0 0 16px 0; font-size: 1.25rem; color: #111827;">Acreditaciones</h3>
+        <div class="acred-table-wrap">
+          <table class="acred-table">
+            <thead>
+              <tr>
+                <th>Organismo</th>
+                <th>Número</th>
+                <th>Alcance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EMA</td>
+                <td>AE-07</td>
+                <td>Acreditación como Laboratorio de Calibración conforme a ISO/IEC 17025:2017 para analizadores específicos, incluidos analizadores de gases, combustión y proceso, dentro del alcance acreditado.</td>
+              </tr>
+              <tr>
+                <td>EMA</td>
+                <td>OP-16</td>
+                <td>Acreditación como Laboratorio de Calibración conforme a ISO/IEC 17025:2017 para analizadores de opacidad utilizados en verificación vehicular, dentro del alcance acreditado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          <strong>Pioneros en México:</strong> Primer laboratorio de calibración acreditado por el entonces Sistema Nacional de Calibración (Dirección General de Normas), antecedente de la actual Entidad Mexicana de Acreditación (EMA).
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTA REVISIÓN Y SOLICITUD -->
+    <div id="documentos" style="border-top: 1px solid #e5e7eb; padding-top: 24px; color: #6b7280; font-size: 0.95rem;">
+      <p><strong>Última revisión de esta página:</strong> 21 de febrero de 2025.</p>
+      <p>Para solicitar una copia oficial y vigente de cualquier documento acreditativo, por favor ponte en contacto a través de nuestra sección de <a href="contacto.html" style="color: #106a9b; font-weight: 600; text-decoration: none;">Contacto</a>.</p>
+    </div>
+
+  </main>
+
+    <!-- OFFICES SECTION -->
+  <section class="offices">
+    <div class="container">
+      <p class="eyebrow center light">Dónde estamos</p>
+      <h2 class="center light">Nuestras oficinas</h2>
+
+      <div class="offices-grid">
+        <div class="office-card">
+          <h3>Oficinas CDMX</h3>
+          <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+          <p class="office-phone">Tels.: (55) 5552 4398<br>2612 3633 / 5768 3971</p>
+        </div>
+        <div class="office-card">
+          <h3>Oficinas Guadalajara, Jal.</h3>
+          <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+          <p class="office-phone">Tels.: (33) 3135 2360 / 3135 3483</p>
+        </div>
+        <div class="office-card">
+          <h3>Oficinas y Laboratorio</h3>
+          <p>Sto. Tomás de Aquino No. 8315<br>
+          Puebla, Pue. C.P. 72595</p>
+          <p class="office-phone">Tel.: (222) 213 7100<br>con 10 líneas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Grupo Thera. Todos los derechos reservados.</p>
+      <p>Powered by ....</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -245,7 +245,7 @@ h1, h2, h3 {
 .hero {
   position: relative;
   padding: 80px 0;
-  background: linear-gradient(180deg, #d6e5f5 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #FFFFFF 100%);
   border-bottom: 0px solid #E2E8F0;
 }
 
@@ -625,15 +625,6 @@ h1, h2, h3 {
 
 
 
-
-
-
-
-
-
-
-
-
 /* ===== OFFICES SECTION ===== */
 .offices { 
   padding: 110px 0; 
@@ -782,3 +773,102 @@ h1, h2, h3 {
     display: flex;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .nav {
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(11, 93, 139, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+
+      .nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 76px;
+        gap: 18px;
+      }
+
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: var(--white);
+        font-size: 1.3rem;
+        box-shadow: var(--shadow);
+      }
+
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: var(--white);
+        font-weight: 700;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease;
+      }
+
+
+      .cta:hover {
+        transform: translateY(-1px);
+      }

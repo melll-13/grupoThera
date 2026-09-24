@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluciones y Servicios | Grupo Thera</title>
+  <meta name="description" content="Descubre nuestras soluciones especializadas en agua, aire, metrología e ingeniería industrial.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .selector-container { display: grid; grid-template-columns: 300px 1fr; gap: 32px; margin-top: 32px; }
+    .selector-tabs { display: flex; flex-direction: column; gap: 10px; }
+    .selector-tab { border: 1px solid #e5e7eb; background: #ffffff; border-radius: 8px; padding: 18px 20px; text-align: left; font-weight: 600; color: #1f2937; cursor: pointer; transition: all 0.2s ease; font-size: 15px; }
+    .selector-tab.active, .selector-tab:hover { background: #092d4f; color: #ffffff; border-color: #092d4f; }
+    .selector-panel { background: #ffffff; border-radius: 12px; padding: 36px; border: 1px solid #e5e7eb; box-shadow: 0 10px 25px rgba(0,0,0,0.05); min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+    .selector-panel h3 { color: #092d4f; font-size: 1.5rem; margin-bottom: 12px; }
+    .selector-panel p { color: #4b5563; font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; }
+    .action-link { display: inline-flex; align-items: center; gap: 6px; color: #106a9b; font-weight: 700; text-decoration: none; }
+    .action-link:hover { text-decoration: underline; }
+    
+    .industry-grid { display: grid; grid-template-columns: 260px 1fr; gap: 30px; margin-top: 32px; }
+    .industry-menu { display: flex; flex-direction: column; gap: 8px; }
+    .industry-btn { padding: 14px 18px; border: none; border-left: 4px solid transparent; background: transparent; text-align: left; font-weight: 600; color: #6b7280; cursor: pointer; border-radius: 0 6px 6px 0; }
+    .industry-btn.active { border-color: #13b7b0; background: #ffffff; color: #092d4f; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .industry-content { background: #ffffff; border-radius: 10px; padding: 30px; border: 1px solid #e5e7eb; }
+    .industry-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .industry-split h4 { color: #0879b9; font-size: 1.1rem; margin-bottom: 12px; border-bottom: 2px solid #f3f4f6; padding-bottom: 6px; }
+    .industry-split ul { padding-left: 18px; color: #4b5563; font-size: 0.95rem; line-height: 1.6; }
+    .industry-split li { margin-bottom: 8px; }
+
+    @media(max-width: 850px) {
+      .selector-container, .industry-grid, .industry-split { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+ 
+    
+
+
+
+<!-- HEADER / NAV -->
+
+
+
+<header style="position:sticky; top:0; z-index:1000; background:#ffffff; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI', Arial, sans-serif;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:76px;">
+
+    <!-- LOGO -->
+    <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+      <img src="assets/GRUPO-THERA.png" alt="Grupo Thera Logo" style="height:44px; width:auto; display:block;">
+    </a>
+
+    <!-- NAV TOGGLE (mobile) -->
+    <input type="checkbox" id="nav-toggle" style="display:none;">
+    <label for="nav-toggle" style="display:none; cursor:pointer;">
+      <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+      <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+      <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+    </label>
+
+    <!-- MAIN NAV -->
+    <nav>
+      <ul style="display:flex; align-items:center; gap:8px; list-style:none; margin:0; padding:0;">
+
+        <li>
+          <a href="index.html" style="display:block; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">Inicio</a>
+        </li>
+
+        <!-- SOLUCIONES -->
+        <li style="position:relative;"
+            onmouseenter="document.getElementById('drop-soluciones').style.display='block';"
+            onmouseleave="document.getElementById('drop-soluciones').style.display='none';">
+
+          <a href="servicios.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+            Soluciones <span style="font-size:11px;">▾</span>
+          </a>
+
+          <div id="drop-soluciones" style="display:none; position:absolute; top:100%; left:0; width:240px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+            <a href="agua.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Agua</a>
+            <a href="aire.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Aire</a>
+            <a href="metrologia.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Metrología</a>
+            <a href="ingenieria.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Ingeniería e Instrumentación</a>
+          </div>
+        </li>
+
+        <!-- INDUSTRIAS -->
+        <li style="position:relative;"
+            onmouseenter="document.getElementById('drop-industrias').style.display='block';"
+            onmouseleave="document.getElementById('drop-industrias').style.display='none';">
+
+          <a href="industrias.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+            Industrias <span style="font-size:11px;">▾</span>
+          </a>
+
+          <div id="drop-industrias" style="display:none; position:absolute; top:100%; left:0; width:240px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+            <a href="industrias.html#alimentos" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Alimentos y bebidas</a>
+            <a href="industrias.html#farma" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Farmacéutica</a>
+            <a href="industrias.html#quimica" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Química</a>
+            <a href="industrias.html#manufactura" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Manufactura</a>
+            <a href="industrias.html" style="display:block; padding:10px 12px; border-radius:6px; color:#0ea5a4; text-decoration:none; font-size:14px; font-weight:600;">Ver todas →</a>
+          </div>
+        </li>
+
+        <!-- GRUPO THERA -->
+        <li style="position:relative;"
+            onmouseenter="document.getElementById('drop-grupo').style.display='block';"
+            onmouseleave="document.getElementById('drop-grupo').style.display='none';">
+
+          <a href="quienessomos.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+            Grupo Thera <span style="font-size:11px;">▾</span>
+          </a>
+
+          <div id="drop-grupo" style="display:none; position:absolute; top:100%; left:0; width:280px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+            <div style="padding:8px 12px 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:#9ca3af;">Nosotros</div>
+            <a href="quienessomos.html#mision" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Misión, visión y valores</a>
+            <a href="quienessomos.html#trayectoria" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Trayectoria</a>
+            <a href="quienessomos.html#equipo" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Equipo</a>
+            <div style="height:1px; background:#e5e7eb; margin:6px 8px;"></div>
+            <a href="empresas-grupo.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Empresas del grupo</a>
+            <a href="acreditaciones.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Acreditaciones y aprobaciones</a>
+            <a href="testimonios.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Experiencias y testimonios</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="recursos.html" style="display:block; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">Recursos</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- HEADER ACTIONS -->
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button aria-label="Buscar" style="background:none; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; color:#1f2937;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="contacto.html" style="background:#106a9b; color:#ffffff; text-decoration:none; font-size:14px; font-weight:600; padding:11px 22px; border-radius:8px;">Contáctanos</a>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="badge-tag">Innovación y Soporte Técnico</div>
+        <h1>Soluciones adaptadas a tus <span style="background: linear-gradient(90deg, #0a3458, #3cb4d5, #6fbcfc); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">necesidades</span></h1>
+        <p class="hero-text">
+          Integramos tecnología, ingeniería y cumplimiento normativo para optimizar cada proceso industrial y ambiental.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN INTERACTIVA: ¿QUÉ NECESITAS RESOLVER? -->
+  <main class="container" style="padding-top: 60px; padding-bottom: 80px;">
+    
+    <section style="margin-bottom: 70px;">
+      <p class="eyebrow">Asistencia Interactiva</p>
+      <h2 style="font-size: 2.2rem; color: #092d4f; margin-bottom: 8px;">¿Qué necesitas resolver?</h2>
+      <p style="color: #6b7280; font-size: 1.05rem;">Selecciona una línea de servicio para conocer nuestra oferta detallada.</p>
+
+      <div class="selector-container">
+        <div class="selector-tabs" role="tablist">
+          <button class="selector-tab active" data-target="agua">Agua</button>
+          <button class="selector-tab" data-target="aire">Aire</button>
+          <button class="selector-tab" data-target="metrologia">Metrología</button>
+          <button class="selector-tab" data-target="ingenieria">Ingeniería e Instrumentación</button>
+        </div>
+        <div class="selector-panel" id="dynamic-panel">
+          <!-- El contenido se inyecta dinámicamente vía JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: FILTRO POR INDUSTRIA -->
+    <section style="margin-bottom: 70px;">
+      <p class="eyebrow">Sectores de Aplicación</p>
+      <h2 style="font-size: 2.2rem; color: #092d4f; margin-bottom: 8px;">¿A qué sector o industria perteneces?</h2>
+      <p style="color: #6b7280; font-size: 1.05rem;">Identifica los retos comunes de tu sector y las soluciones técnicas correspondientes.</p>
+
+      <div class="industry-grid">
+        <div class="industry-menu">
+          <button class="industry-btn active" data-ind="municipal">Municipal</button>
+          <button class="industry-btn" data-ind="energia">Energía y procesos</button>
+          <button class="industry-btn" data-ind="manufactura">Manufactura</button>
+          <button class="industry-btn" data-ind="consumo">Consumo y salud</button>
+        </div>
+        <div class="industry-content" id="industry-panel">
+          <!-- Contenido de industria inyectado vía JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE BENEFICIOS -->
+    <section>
+      <p class="eyebrow center">Nuestra Propuesta de Valor</p>
+      <h2 class="center" style="font-size: 2rem; color: #092d4f; margin-bottom: 30px;">Beneficios clave</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div style="background:#fff; border-top: 4px solid #13b7b0; padding:24px; border-radius:8px; border:1px solid #e5e7eb; box-shadow:0 4px 6px rgba(0,0,0,0.02)">
+          <strong style="color:#092d4f; font-size:1.1rem; display:block; margin-bottom:8px;">✓ Cumplimiento y respaldo técnico</strong>
+          <p style="color:#4b5563; font-size:0.95rem; margin:0;">Cumplimiento riguroso de normas ambientales y evidencia técnica impecable para auditorías.</p>
+        </div>
+        <div style="background:#fff; border-top: 4px solid #13b7b0; padding:24px; border-radius:8px; border:1px solid #e5e7eb; box-shadow:0 4px 6px rgba(0,0,0,0.02)">
+          <strong style="color:#092d4f; font-size:1.1rem; display:block; margin-bottom:8px;">↗ Eficiencia operativa</strong>
+          <p style="color:#4b5563; font-size:0.95rem; margin:0;">Mayor rendimiento de tus procesos industriales y reducción de tiempos de paro imprevistos.</p>
+        </div>
+        <div style="background:#fff; border-top: 4px solid #13b7b0; padding:24px; border-radius:8px; border:1px solid #e5e7eb; box-shadow:0 4px 6px rgba(0,0,0,0.02)">
+          <strong style="color:#092d4f; font-size:1.1rem; display:block; margin-bottom:8px;">◈ Optimización de recursos</strong>
+          <p style="color:#4b5563; font-size:0.95rem; margin:0;">Aprovechamiento sustentable del agua, la energía y la infraestructura instalada.</p>
+        </div>
+        <div style="background:#fff; border-top: 4px solid #13b7b0; padding:24px; border-radius:8px; border:1px solid #e5e7eb; box-shadow:0 4px 6px rgba(0,0,0,0.02)">
+          <strong style="color:#092d4f; font-size:1.1rem; display:block; margin-bottom:8px;">◉ Control y prevención</strong>
+          <p style="color:#4b5563; font-size:0.95rem; margin:0;">Detección temprana de anomalías mediante monitoreo continuo y control de variables críticas.</p>
+        </div>
+        <div style="background:#fff; border-top: 4px solid #13b7b0; padding:24px; border-radius:8px; border:1px solid #e5e7eb; box-shadow:0 4px 6px rgba(0,0,0,0.02)">
+          <strong style="color:#092d4f; font-size:1.1rem; display:block; margin-bottom:8px;">▣ Decisiones basadas en datos</strong>
+          <p style="color:#4b5563; font-size:0.95rem; margin:0;">Información transparente, confiable y trazable para un diagnóstico oportuno del desempeño.</p>
+        </div>
+        <div style="background:#fff; border-top: 4px solid #13b7b0; padding:24px; border-radius:8px; border:1px solid #e5e7eb; box-shadow:0 4px 6px rgba(0,0,0,0.02)">
+          <strong style="color:#092d4f; font-size:1.1rem; display:block; margin-bottom:8px;">✦ Ingeniería a la medida</strong>
+          <p style="color:#4b5563; font-size:0.95rem; margin:0;">Integración de tecnologías y automatización adaptadas a las exigencias particulares de tu planta.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT DE INTERACTIVIDAD -->
+  <script>
+    const needData = {
+      agua: {
+        title: "Soluciones en Agua",
+        text: "Desarrollamos soluciones integrales para la gestión del recurso hídrico, desde análisis de laboratorio y matrices normativas hasta el diseño de PTAR y medición de consumo con sensores multiparámetro.",
+        linkText: "Ver detalle completo de Agua →",
+        linkHref: "agua.html"
+      },
+      aire: {
+        title: "Soluciones en Aire",
+        text: "Integramos tecnologías para la evaluación, monitoreo de calidad del aire y control de emisiones. Incluye Sistemas CEMS, certificación de primera vez y optimización de sistemas de combustión.",
+        linkText: "Contactar a un especialista en Aire →",
+        linkHref: "contacto.html"
+      },
+      metrologia: {
+        title: "Soluciones en Metrología",
+        text: "Garantizamos la confiabilidad de las mediciones mediante calibración de analizadores de gases, mantenimiento preventivo, correctivo, ajuste de equipos e implementación de controles de calidad.",
+        linkText: "Solicitar cotización de calibración →",
+        linkHref: "contacto.html"
+      },
+      ingenieria: {
+        title: "Soluciones en Ingeniería e Instrumentación",
+        text: "Diseñamos e integramos proyectos llave en mano, automatización industrial, instrumentación y control, ingeniería conceptual y de detalle para mejorar el desempeño de tus procesos.",
+        linkText: "Conocer proyectos de ingeniería →",
+        linkHref: "contacto.html"
+      }
+    };
+
+    const industryData = {
+      municipal: {
+        title: "Sector Municipal",
+        challenges: [
+          "Garantizar la calidad del agua y el cumplimiento de parámetros ambientales.",
+          "Optimizar el funcionamiento de plantas de tratamiento de agua y aguas residuales.",
+          "Reducir el consumo de agua y detectar pérdidas o desviaciones.",
+          "Controlar emisiones asociadas al transporte y fuentes públicas."
+        ],
+        solutions: [
+          "Monitoreo y análisis de agua y aguas residuales.",
+          "Evaluación y optimización de plantas de tratamiento.",
+          "Medición de contaminantes y variables ambientales.",
+          "Ingeniería e instrumentación para procesos municipales."
+        ]
+      },
+      energia: {
+        title: "Sector Energía y Procesos",
+        challenges: [
+          "Controlar y reducir emisiones de sistemas de combustión industrial.",
+          "Mantener una combustión eficiente y estable bajo límites regulatorios.",
+          "Garantizar la confiabilidad de analizadores de gases críticos.",
+          "Mantener la continuidad operativa en instalaciones de alta exigencia."
+        ],
+        solutions: [
+          "Monitoreo de emisiones y gases de combustión (Sistemas CEMS).",
+          "Calibración y mantenimiento de analizadores especializados.",
+          "Instrumentación y control de variables de proceso crítico.",
+          "Diagnóstico y optimización de combustión."
+        ]
+      },
+      manufactura: {
+        title: "Sector Manufactura",
+        challenges: [
+          "Controlar el impacto ambiental de operaciones productivas y descargas.",
+          "Garantizar la precisión de instrumentos de medición y control.",
+          "Reducir desperdicios, consumos y tiempos improductivos.",
+          "Cumplir requisitos técnicos y de calidad exigidos por clientes."
+        ],
+        solutions: [
+          "Estudios y mediciones de ruido, agua y calidad del aire.",
+          "Metrología y calibración de instrumentos industriales.",
+          "Automatización e integración de tecnologías sin parar la línea.",
+          "Mantenimiento preventivo de equipos de medición."
+        ]
+      },
+      consumo: {
+        title: "Sector Consumo y Salud",
+        challenges: [
+          "Garantizar la calidad e inocuidad del agua utilizada en procesos.",
+          "Mantener bajo control variables críticas de producción y áreas limpias.",
+          "Asegurar la trazabilidad absoluta de los equipos de medición.",
+          "Minimizar paros y asegurar cumplimiento regulatorio sanitario."
+        ],
+        solutions: [
+          "Análisis especializado y monitoreo continuo de agua.",
+          "Calibración rigurosa de equipos e instrumentos de medición.",
+          "Generación de evidencia técnica y documentación para auditorías.",
+          "Integración de sistemas de control para procesos limpios."
+        ]
+      }
+    };
+
+    function renderNeed(key) {
+      const item = needData[key];
+      document.getElementById('dynamic-panel').innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+        <a href="${item.linkHref}" class="action-link">${item.linkText}</a>
+      `;
+    }
+
+    function renderIndustry(key) {
+      const ind = industryData[key];
+      document.getElementById('industry-panel').innerHTML = `
+        <h3 style="color:#092d4f; font-size:1.3rem; margin-bottom:18px;">${ind.title}</h3>
+        <div class="industry-split">
+          <div>
+            <h4>Retos comunes</h4>
+            <ul>${ind.challenges.map(c => `<li>${c}</li>`).join('')}</ul>
+          </div>
+          <div>
+            <h4>Soluciones Grupo Thera</h4>
+            <ul>${ind.solutions.map(s => `<li>${s}</li>`).join('')}</ul>
+          </div>
+        </div>
+      `;
+    }
+
+    // Event Listeners para el selector de necesidades
+    document.querySelectorAll('.selector-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.selector-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderNeed(tab.dataset.target);
+      });
+    });
+
+    // Event Listeners para las industrias
+    document.querySelectorAll('.industry-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.industry-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderIndustry(btn.dataset.ind);
+      });
+    });
+
+    // Inicializar vistas por defecto
+    renderNeed('agua');
+    renderIndustry('municipal');
+  </script>
+
+     <!-- OFFICES SECTION -->
+  <section class="offices">
+    <div class="container">
+      <p class="eyebrow center light">Dónde estamos</p>
+      <h2 class="center light">Nuestras oficinas</h2>
+
+      <div class="offices-grid">
+        <div class="office-card">
+          <h3>Oficinas CDMX</h3>
+          <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+          <p class="office-phone">Tels.: (55) 5552 4398<br>2612 3633 / 5768 3971</p>
+        </div>
+        <div class="office-card">
+          <h3>Oficinas Guadalajara, Jal.</h3>
+          <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+          <p class="office-phone">Tels.: (33) 3135 2360 / 3135 3483</p>
+        </div>
+        <div class="office-card">
+          <h3>Oficinas y Laboratorio</h3>
+          <p>Sto. Tomás de Aquino No. 8315<br>
+          Puebla, Pue. C.P. 72595</p>
+          <p class="office-phone">Tel.: (222) 213 7100<br>con 10 líneas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Grupo Thera. Todos los derechos reservados.</p>
+      <p>Powered by ....</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
