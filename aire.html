@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Soluciones integrales de Grupo Thera para la gestión de emisiones atmosféricas.">
+<title>Soluciones en Aire | Grupo Thera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#106a9b;--dark:#0b537b;--ink:#1f2937;--soft:#f3f4f6;--line:#e5e7eb;--mut:#667085;--tint:#e4f3fa}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:#fff;font-family:Inter,Arial,sans-serif;line-height:1.6}
+h1,h2,h3{margin:0;font-family:'Plus Jakarta Sans',Inter,sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav img{height:44px;display:block}
+.menu{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.menu>li{position:relative}
+.menu>li>a{display:block;padding:12px 14px;font-size:15px;font-weight:500}
+.menu>li>a:hover{color:var(--blue)}
+.dd{display:none;position:absolute;top:100%;left:0;width:250px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.12);padding:8px}
+.menu>li:hover .dd{display:block}
+.dd a{display:block;padding:10px 12px;border-radius:6px;font-size:14px}
+.dd a:hover{background:var(--soft)}
+.cta{background:var(--blue);color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px}
+@media(max-width:900px){.menu{display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(115deg,var(--dark),var(--blue));padding:106px 0 112px}
+.hero:after{content:'';position:absolute;width:390px;height:390px;right:-110px;top:-180px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 42px rgba(255,255,255,.05),0 0 0 84px rgba(255,255,255,.04)}
+.hero .container{position:relative;z-index:1;max-width:760px}
+.eyebrow{margin-bottom:14px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero .eyebrow{color:#d8f1ff}
+.hero h1{font-size:clamp(2.3rem,5vw,4.2rem);letter-spacing:-.055em}
+.hero p{margin:22px 0 0;color:#e7f5fb;font-size:1.15rem}
+
+/* Sections */
+.section{padding:96px 0}
+.alt{background:var(--soft)}
+.head{max-width:680px;margin-bottom:46px}
+.head h2{font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.04em}
+.head p{margin:14px 0 0;color:var(--mut)}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* Servicios */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{padding:32px;background:#fff;border:1px solid #e8edf0;border-radius:18px;box-shadow:0 12px 30px rgba(31,41,55,.06);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(16,106,155,.15)}
+.ico{width:52px;height:52px;display:grid;place-items:center;margin-bottom:22px;background:var(--tint);border-radius:14px;font-size:1.5rem}
+.card h3{font-size:1.2rem;margin-bottom:14px}
+.card ul{margin:0;padding:0;list-style:none}
+.card li{position:relative;padding-left:24px;margin:10px 0;color:#4b5563;font-size:.95rem}
+.card li:before{content:'✓';position:absolute;left:0;color:var(--blue);font-weight:800}
+.more{display:inline-block;margin-top:34px;color:var(--blue);font-weight:700}
+.more:hover{text-decoration:underline}
+
+/* Tecnologías */
+.tiles5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.tile{padding:30px 16px;text-align:center;background:#fff;border-radius:18px;border:1px solid var(--line);font-weight:600;font-size:.95rem;transition:transform .25s}
+.tile:hover{transform:translateY(-5px)}
+.tile span{display:block;font-size:2.4rem;margin-bottom:12px}
+
+/* Variables monitoreadas (FIX: columnas con minmax(0,...) para que el carrusel no las ensanche) */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:64px;align-items:center}
+.split>*{min-width:0}
+.split h2{font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.04em}
+.split p{color:var(--mut);margin:16px 0 0}
+.bignum{margin-top:28px;font:800 4.5rem/1 'Plus Jakarta Sans',sans-serif;color:var(--blue)}
+.bignum small{display:block;margin-top:6px;font:500 .95rem Inter,sans-serif;color:var(--mut)}
+.showcase{min-width:0;max-width:100%;background:linear-gradient(160deg,var(--tint),#fff);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 24px 50px rgba(16,106,155,.12)}
+.mol-carousel{max-width:100%;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:20px;background:#fff;scrollbar-width:none;cursor:grab}
+.mol-carousel::-webkit-scrollbar{display:none}
+.mol-carousel.dragging{cursor:grabbing;scroll-snap-type:none}
+.mol-track{display:flex}
+.mol-slide{min-width:0;flex:0 0 100%;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;padding:30px 20px 24px;text-align:center}
+.mol-slide svg{width:190px;height:auto}
+.mol-formula{margin-top:10px;font:800 1.35rem 'Plus Jakarta Sans',sans-serif}
+.mol-label{font-size:.85rem;color:var(--mut)}
+.mol-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px}
+.mol-arrow{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--blue);font-size:1.1rem;cursor:pointer}
+.mol-arrow:hover{background:var(--tint)}
+.mol-dots{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;max-width:220px}
+.mol-dot{width:7px;height:7px;border-radius:50%;background:#d7dee3;border:0;padding:0;cursor:pointer;transition:.25s}
+.mol-dot.active{background:var(--blue);transform:scale(1.4)}
+.mol-count{text-align:center;font-size:.78rem;color:#9aa5ab;margin:6px 0 0}
+
+/* Beneficios */
+.dark{background:linear-gradient(135deg,var(--dark),var(--blue));color:#fff}
+.dark .head p{color:#cfe8f4}
+.dark .eyebrow{color:#d8f1ff}
+.bcard{padding:28px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:18px;backdrop-filter:blur(4px)}
+.bcard .ico{background:rgba(255,255,255,.16)}
+.bcard h3{font-size:1.1rem;margin-bottom:8px}
+.bcard p{margin:0;color:#d5ebf5;font-size:.92rem}
+.dark .more{color:#fff}
+
+/* Aplicaciones */
+.tiles4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.app{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;text-align:center;background:var(--tint);border-radius:20px;font-weight:700;transition:transform .25s,background .25s}
+.app span{font-size:2.6rem}
+.app:hover{transform:scale(1.04);background:#d3ecf8}
+
+/* Contacto / oficinas / footer */
+.contact{padding:66px 0;color:#fff;background:var(--ink)}
+.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.contact h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.contact p{margin:12px 0 0;color:#d1d5db}
+.button{display:inline-block;flex:none;padding:14px 23px;color:#fff;background:var(--blue);border-radius:8px;font-weight:700;transition:background .2s}
+.button:hover{background:#0c557d}
+.offices{padding:80px 0;text-align:center}
+.offices h2{margin:8px 0 40px;font-size:clamp(1.6rem,3vw,2.2rem)}
+.ogrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;text-align:left}
+.ocard{padding:26px;background:var(--soft);border:1px solid var(--line);border-radius:14px}
+.ocard h3{font-size:1.05rem;margin-bottom:8px}
+.ocard p{margin:8px 0 0;font-size:.9rem;color:#4b5563}
+.site-footer{padding:30px 0;background:#111827;color:#9ca3af;font-size:.85rem}
+.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-inner p{margin:0}
+
+/* Animación */
+.fade{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.fade.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+
+/* Responsive */
+@media(max-width:900px){
+ .grid3,.ogrid{grid-template-columns:minmax(0,1fr)}
+ .split{grid-template-columns:minmax(0,1fr);gap:36px}
+ .tiles5{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tiles4{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-inner{display:block}.contact .button{margin-top:24px}
+ .section{padding:64px 0}.hero{padding:74px 0 80px}
+}
+</style>
+</head>
+<body>
+
+<!-- Gradientes compartidos para las moléculas -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="gC" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ff7fd0"/><stop offset=".55" stop-color="#d6127f"/><stop offset="1" stop-color="#7a0a52"/></radialGradient>
+<radialGradient id="gO" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#8fe9ff"/><stop offset=".55" stop-color="#1f8fd6"/><stop offset="1" stop-color="#0b4d80"/></radialGradient>
+<radialGradient id="gS" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff3a0"/><stop offset=".55" stop-color="#f2c94c"/><stop offset="1" stop-color="#a97a0a"/></radialGradient>
+<radialGradient id="gN" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#baf7c0"/><stop offset=".55" stop-color="#3fae52"/><stop offset="1" stop-color="#1f6b2c"/></radialGradient>
+<radialGradient id="gH" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#c7ced1"/></radialGradient>
+<radialGradient id="gG" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#eef0f2"/><stop offset="1" stop-color="#aab2b8"/></radialGradient>
+<radialGradient id="gSun" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff3a0"/><stop offset=".55" stop-color="#f5b942"/><stop offset="1" stop-color="#c17a0b"/></radialGradient>
+</defs></svg>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <a href="index.html"><img src="assets/GRUPO-THERA.png" alt="Grupo Thera"></a>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Soluciones ▾</a>
+        <div class="dd"><a href="agua.html">Agua</a><a href="aire.html">Aire</a><a href="metrologia.html">Metrología</a><a href="ingenieria.html">Ingeniería e Instrumentación</a></div></li>
+      <li><a href="industrias.html">Industrias ▾</a>
+        <div class="dd"><a href="industrias.html#alimentos">Alimentos y bebidas</a><a href="industrias.html#farma">Farmacéutica</a><a href="industrias.html#quimica">Química</a><a href="industrias.html#manufactura">Manufactura</a><a href="industrias.html" style="color:var(--blue);font-weight:600">Ver todas →</a></div></li>
+      <li><a href="quienessomos.html">Grupo Thera ▾</a>
+        <div class="dd" style="width:280px"><a href="quienessomos.html#mision">Misión, visión y valores</a><a href="quienessomos.html#trayectoria">Trayectoria</a><a href="quienessomos.html#equipo">Equipo</a><a href="empresas-grupo.html">Empresas del grupo</a><a href="acreditaciones.html">Acreditaciones y aprobaciones</a><a href="testimonios.html">Experiencias y testimonios</a></div></li>
+      <li><a href="recursos.html">Recursos</a></li>
+    </ul>
+    <a class="cta" href="contacto.html">Contáctanos</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero"><div class="container">
+  <div class="eyebrow">Gestión ambiental y operativa</div>
+  <h1>SOLUCIONES EN AIRE</h1>
+  <p>Integramos tecnologías para la evaluación, monitoreo y control de emisiones atmosféricas, permitiendo a nuestros clientes operar con información confiable y cumplir con los requerimientos ambientales aplicables.</p>
+</div></section>
+
+<!-- SERVICIOS -->
+<section class="section"><div class="container">
+  <div class="head fade"><div class="eyebrow">Servicios</div><h2>Del monitoreo a la certificación</h2><p>Acompañamos cada etapa: medir, validar y mejorar el desempeño de sus fuentes de emisión.</p></div>
+  <div class="grid3">
+    <div class="card fade"><div class="ico">📡</div><h3>Monitoreo y datos</h3><ul>
+      <li>Monitoreo de calidad del aire</li><li>Sistemas de Monitoreo Continuo de Emisiones (CEMS)</li><li>Integración de sistemas de adquisición de datos</li></ul></div>
+    <div class="card fade"><div class="ico">✅</div><h3>Instalación y certificación</h3><ul>
+      <li>Instalación y puesta en marcha de CEMS</li><li>Certificación y validación de sistemas</li><li>Performance Test</li><li>RATA Test</li></ul></div>
+    <div class="card fade"><div class="ico">🔥</div><h3>Evaluación y optimización</h3><ul>
+      <li>Evaluación de emisiones</li><li>Diagnóstico de fuentes contaminantes</li><li>Optimización de sistemas de combustión</li></ul></div>
+  </div>
+  <a class="more fade" href= contacto.html >Solicitar información →</a>
+</div></section>
+
+<!-- TECNOLOGÍAS -->
+<section class="section alt"><div class="container">
+  <div class="head center fade"><div class="eyebrow">Tecnologías</div><h2>Equipos que respaldan cada medición</h2></div>
+  <div class="tiles5">
+    <div class="tile fade"><span>🧪</span>Analizadores de gases</div>
+    <div class="tile fade"><span>🌦️</span>Estaciones meteorológicas</div>
+    <div class="tile fade"><span>📟</span>Sensores para calidad del aire</div>
+    <div class="tile fade"><span>💾</span>Sistemas de adquisición de datos</div>
+    <div class="tile fade"><span>🛰️</span>Monitoreo remoto en tiempo real</div>
+  </div>
+</div></section>
+
+<!-- VARIABLES MONITOREADAS -->
+<section class="section"><div class="container split">
+  <div class="fade">
+    <div class="eyebrow">Variables monitoreadas</div>
+    <h2>Medimos lo que importa de sus emisiones</h2>
+    <p>Gases, partículas y condiciones meteorológicas medidos con precisión para que usted tome decisiones con datos confiables.</p>
+    <div class="bignum">10<small>variables clave monitoreadas</small></div>
+  </div>
+  <div class="showcase fade">
+    <div class="mol-carousel" id="molCarousel"><div class="mol-track" id="molTrack"></div></div>
+    <div class="mol-nav">
+      <button class="mol-arrow" id="molPrev" aria-label="Anterior">‹</button>
+      <div class="mol-dots" id="molDots"></div>
+      <button class="mol-arrow" id="molNext" aria-label="Siguiente">›</button>
+    </div>
+    <p class="mol-count" id="molCount"></p>
+  </div>
+</div></section>
+
+<!-- BENEFICIOS -->
+<section class="section dark"><div class="container">
+  <div class="head fade"><div class="eyebrow">Beneficios</div><h2>Confianza técnica para operar y auditar</h2><p>Información precisa que se traduce en cumplimiento, eficiencia y tranquilidad.</p></div>
+  <div class="grid3">
+    <div class="bcard fade"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-line preview-icon"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-.5"/><path d="M16 4h2a2 2 0 0 1 1.73 1"/><path d="M8 18h1"/><path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
+
+    </div><h3>Evidencia para auditorías</h3><p>Evidencia técnica sólida ante revisiones y autoridades.</p></div>
+    <div class="bcard fade"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sprout preview-icon"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg>
+        
+    </div><h3>Cumplimiento ambiental</h3><p>Opere dentro de los requerimientos ambientales aplicables.</p></div>
+    <div class="bcard fade"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined preview-icon"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg>
+        
+    </div><h3>Monitoreo continuo</h3><p>Visibilidad permanente del comportamiento de su proceso.</p></div>
+    <div class="bcard fade"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+
+        
+    </div><h3>Detección oportuna</h3><p>Identifique desviaciones antes de que se conviertan en problemas.</p></div>
+    <div class="bcard fade"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+
+
+    </div><h3>Combustión optimizada</h3><p>Mejore el desempeño de sus sistemas de combustión.</p></div>
+    <div class="bcard fade"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        
+    </div><h3>Decisiones en tiempo real</h3><p>Información inmediata para actuar con rapidez.</p></div>
+  </div>
+  <a class="more fade" href="mailto:contacto@grupothera.com">Solicitar información →</a>
+</div></section>
+
+<!-- APLICACIONES -->
+<section class="section"><div class="container">
+  <div class="head center fade"><div class="eyebrow">Aplicaciones</div><h2>Donde nuestras soluciones operan</h2></div>
+  <div class="tiles4">
+    <div class="app fade"><span>🏭</span>Calderas</div>
+    <div class="app fade"><span>🔥</span>Hornos</div>
+    <div class="app fade"><span>⚡</span>Plantas de generación de energía</div>
+    <div class="app fade"><span>🏗️</span>Cementeras</div>
+    <div class="app fade"><span>⚗️</span>Industria química</div>
+    <div class="app fade"><span>🛢️</span>Petroquímica</div>
+    <div class="app fade" style="grid-column:span 2;aspect-ratio:auto;min-height:150px"><span>📍</span>Procesos con fuentes fijas de emisión</div>
+  </div>
+</div></section>
+
+<!-- CONTACTO -->
+<section class="contact"><div class="container contact-inner">
+  <div><h2>Hablemos de su proyecto de calidad del aire</h2><p>Solicite una propuesta a la medida para su operación.</p></div>
+  <a class="button" href="mailto:contacto@grupothera.com">Cotizar solución en aire</a>
+</div></section>
+</main>
+
+<!-- OFICINAS -->
+<section class="offices"><div class="container">
+  <div class="eyebrow">Dónde estamos</div>
+  <h2>Nuestras oficinas</h2>
+  <div class="ogrid">
+    <div class="ocard"><h3>Oficinas CDMX</h3><p><em>Oficina comercial</em></p><p>Tels.: (55) 5552 4398<br>2612 3633 / 5768 3971</p></div>
+    <div class="ocard"><h3>Oficinas Guadalajara, Jal.</h3><p><em>Oficina comercial</em></p><p>Tels.: (33) 3135 2360 / 3135 3483</p></div>
+    <div class="ocard"><h3>Oficinas y Laboratorio</h3><p>Sto. Tomás de Aquino No. 8315<br>Puebla, Pue. C.P. 72595</p><p>Tel.: (222) 213 7100<br>con 10 líneas</p></div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <p>© 2026 Grupo Thera. Todos los derechos reservados.</p><p>Powered by ....</p>
+</div></footer>
+
+<script>
+/* Moléculas: átomo = [x, y, radio, gradiente, texto, tamaño, color, opacidad] */
+var W='#fff';
+var MOLS=[
+ {f:'CO',l:'Monóxido de carbono',b:[[80,70,170,140]],a:[[80,70,58,'gC','C',36,W],[170,140,48,'gO','O',30,W]]},
+ {f:'CO₂',l:'Dióxido de carbono',b:[[65,110,150,60],[150,60,205,150]],a:[[65,110,42,'gO','O',26,W],[150,60,54,'gC','C',32,W],[205,150,44,'gO','O',27,W]]},
+ {f:'SO₂',l:'Dióxido de azufre',b:[[70,70,135,145],[205,70,135,145]],a:[[70,70,42,'gO','O',26,W],[205,70,42,'gO','O',26,W],[135,145,54,'gS','S',30,'#5c3d00']]},
+ {f:'NOx',l:'Óxidos de nitrógeno',b:[[70,70,135,145],[205,70,135,145]],a:[[70,70,42,'gO','O',26,W],[205,70,42,'gO','O',26,W],[135,145,52,'gN','N',28,W]]},
+ {f:'O₂',l:'Oxígeno',b:[[85,75,175,135]],a:[[85,75,54,'gO','O',32,W],[175,135,54,'gO','O',32,W]]},
+ {f:'HC',l:'Hidrocarburos',b:[[130,100,62,55],[130,100,200,55],[130,100,62,150],[130,100,200,150]],a:[[130,100,48,'gC','C',28,W],[62,55,24,'gH','H',16,'#374151'],[200,55,24,'gH','H',16,'#374151'],[62,150,24,'gH','H',16,'#374151'],[200,150,24,'gH','H',16,'#374151']]},
+ {f:'Opacidad',l:'Material particulado visible',b:[],a:[[90,120,46,'gG','',0,W,.75],[150,95,56,'gG','',0,W,.8],[190,130,40,'gG','',0,W,.7],[120,145,34,'gG','',0,W,.65]]},
+ {f:'PM10',l:'Partículas suspendidas',b:[],a:[[80,80,16,'gG'],[130,60,10,'gG'],[175,95,20,'gG'],[110,120,13,'gG'],[160,140,9,'gG'],[65,130,8,'gG'],[200,60,7,'gG'],[140,150,15,'gG']]},
+ {f:'O₃',l:'Ozono',b:[[70,70,135,145],[205,70,135,145]],a:[[70,70,42,'gO','O',26,W],[205,70,42,'gO','O',26,W],[135,145,52,'gO','O',28,W]]},
+ {f:'Met.',l:'Variables meteorológicas',b:[],a:[[130,100,55,'gSun']],
+  x:'<g stroke="#f2c94c" stroke-width="7" stroke-linecap="round"><path d="M130 20v22M130 158v22M20 100h22M218 100h22M52 22l15 15M193 163l15 15M208 22l-15 15M67 163l-15 15"/></g>'}
+];
+function svgFor(m){
+  var s='<svg viewBox="0 0 260 200" aria-hidden="true">'+(m.x||'');
+  m.b.forEach(function(b){s+='<line x1="'+b[0]+'" y1="'+b[1]+'" x2="'+b[2]+'" y2="'+b[3]+'" stroke="#d7dbdd" stroke-width="'+(m.f==='HC'?10:15)+'" stroke-linecap="round"/>';});
+  m.a.forEach(function(a){
+    s+='<circle cx="'+a[0]+'" cy="'+a[1]+'" r="'+a[2]+'" fill="url(#'+a[3]+')"'+(a[7]?' opacity="'+a[7]+'"':'')+'/>';
+    if(a[4])s+='<text x="'+a[0]+'" y="'+a[1]+'" text-anchor="middle" dominant-baseline="central" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="'+a[5]+'" fill="'+a[6]+'">'+a[4]+'</text>';
+  });
+  return s+'</svg>';
+}
+
+(function(){
+  var car=document.getElementById('molCarousel'),track=document.getElementById('molTrack'),
+      dotsWrap=document.getElementById('molDots'),count=document.getElementById('molCount'),
+      total=MOLS.length,cur=0;
+  MOLS.forEach(function(m,i){
+    var s=document.createElement('div');s.className='mol-slide';
+    s.innerHTML=svgFor(m)+'<div class="mol-formula">'+m.f+'</div><div class="mol-label">'+m.l+'</div>';
+    track.appendChild(s);
+    var d=document.createElement('button');d.className='mol-dot';d.setAttribute('aria-label','Variable '+(i+1));
+    d.onclick=function(){goTo(i)};dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+  function goTo(i){cur=Math.max(0,Math.min(total-1,i));car.scrollTo({left:cur*car.clientWidth,behavior:'smooth'});}
+  function sync(){
+    var i=Math.max(0,Math.min(total-1,Math.round(car.scrollLeft/car.clientWidth)));cur=i;
+    dots.forEach(function(d,j){d.classList.toggle('active',j===i)});
+    count.textContent=(i+1)+' / '+total;
+  }
+  document.getElementById('molPrev').onclick=function(){goTo(cur-1)};
+  document.getElementById('molNext').onclick=function(){goTo(cur+1)};
+  car.addEventListener('scroll',function(){requestAnimationFrame(sync)},{passive:true});
+  window.addEventListener('resize',function(){car.scrollLeft=cur*car.clientWidth});
+
+  /* Arrastrar con el mouse */
+  var down=false,sx=0,ss=0;
+  car.addEventListener('mousedown',function(e){down=true;car.classList.add('dragging');sx=e.pageX;ss=car.scrollLeft});
+  window.addEventListener('mouseup',function(){if(!down)return;down=false;car.classList.remove('dragging');goTo(Math.round(car.scrollLeft/car.clientWidth))});
+  car.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();car.scrollLeft=ss-(e.pageX-sx)});
+  sync();
+})();
+
+/* Aparición suave al hacer scroll */
+(function(){
+  var els=document.querySelectorAll('.fade');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

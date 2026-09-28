@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Grupo Thera | Contactános </title>
+  <meta name="description" content="Soluciones integrales para el cumplimiento normativo, la eficiencia operativa y el desempeño ambiental de la industria. Laboratorio, metrología, monitoreo e ingeniería especializada.">
+  <style>
+    :root {
+      --verde: #1f6b4f;
+      --verde-oscuro: #164936;
+      --menta: #e8f3ed;
+      --arena: #f7f8f4;
+      --texto: #23332d;
+      --suave: #66766f;
+      --blanco: #fff;
+      --borde: #dbe5df;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--texto); background: var(--arena); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .contenedor { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    header { background: var(--blanco); border-bottom: 1px solid var(--borde); }
+    .barra { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .marca { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: 700; color: var(--verde-oscuro); }
+    .marca-icono { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 50% 50% 50% 8px; background: var(--verde); color: white; transform: rotate(-20deg); }
+    .marca-icono span { transform: rotate(20deg); }
+    nav { display: flex; align-items: center; gap: 28px; color: var(--suave); font-size: .95rem; }
+    nav a:hover { color: var(--verde); }
+    .boton { display: inline-block; padding: 13px 22px; border: 0; border-radius: 7px; background: var(--verde); color: white; font-weight: 700; cursor: pointer; }
+    .boton:hover { background: var(--verde-oscuro); }
+    .hero { padding: 72px 0 58px; background: linear-gradient(120deg, var(--menta), #f8faf7); }
+    .hero h1 { max-width: 650px; margin: 0 0 15px; color: var(--verde-oscuro); font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; }
+    .hero p { max-width: 610px; margin: 0; color: var(--suave); font-size: 1.1rem; }
+    .contacto { display: grid; grid-template-columns: .9fr 1.1fr; gap: 55px; padding: 72px 0 90px; }
+    .contacto h2 { margin: 0 0 12px; color: var(--verde-oscuro); font-size: 2rem; }
+    .contacto-intro { color: var(--suave); margin-bottom: 32px; }
+    .datos { display: grid; gap: 22px; }
+    .dato { display: flex; gap: 15px; align-items: flex-start; }
+    .dato-icono { min-width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--menta); color: var(--verde); font-size: 1.1rem; }
+    .dato strong { display: block; margin-bottom: 2px; color: var(--verde-oscuro); }
+    .dato span, .dato a { color: var(--suave); font-size: .95rem; }
+    .formulario { padding: 34px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; box-shadow: 0 12px 35px rgba(31, 73, 55, .07); }
+    .formulario h3 { margin: 0 0 22px; color: var(--verde-oscuro); font-size: 1.4rem; }
+    .fila { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    label { display: block; margin: 0 0 6px; color: var(--verde-oscuro); font-size: .9rem; font-weight: 700; }
+    input, textarea, select { width: 100%; margin-bottom: 17px; padding: 12px 13px; border: 1px solid var(--borde); border-radius: 6px; background: #fcfdfc; color: var(--texto); font: inherit; }
+    input:focus, textarea:focus, select:focus { outline: 2px solid #a7d1bb; border-color: var(--verde); }
+    textarea { min-height: 120px; resize: vertical; }
+    .aviso { margin: 14px 0 20px; color: var(--suave); font-size: .78rem; }
+    footer { padding: 28px 0; background: var(--verde-oscuro); color: #d8e8df; font-size: .9rem; }
+    .pie { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 760px) { nav { display: none; } .contacto { grid-template-columns: 1fr; gap: 38px; padding-top: 48px; } .hero { padding: 52px 0 45px; } .fila { grid-template-columns: 1fr; gap: 0; } .formulario { padding: 24px; } .pie { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  
+    
+
+
+
+<!-- HEADER / NAV -->
+
+
+
+<header style="position:sticky; top:0; z-index:1000; background:#ffffff; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI', Arial, sans-serif;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:76px;">
+
+    <!-- LOGO -->
+    <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+      <img src="assets/GRUPO-THERA.png" alt="Grupo Thera Logo" style="height:44px; width:auto; display:block;">
+    </a>
+
+    <!-- NAV TOGGLE (mobile) -->
+    <input type="checkbox" id="nav-toggle" style="display:none;">
+    <label for="nav-toggle" style="display:none; cursor:pointer;">
+      <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+      <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+      <span style="display:block; width:24px; height:2px; background:#1f2937; margin:5px 0;"></span>
+    </label>
+
+    <!-- MAIN NAV -->
+    <nav>
+      <ul style="display:flex; align-items:center; gap:8px; list-style:none; margin:0; padding:0;">
+
+        <li>
+          <a href="index.html" style="display:block; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">Inicio</a>
+        </li>
+
+        <!-- SOLUCIONES -->
+        <li style="position:relative;"
+            onmouseenter="document.getElementById('drop-soluciones').style.display='block';"
+            onmouseleave="document.getElementById('drop-soluciones').style.display='none';">
+
+          <a href="servicios.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+            Soluciones <span style="font-size:11px;">▾</span>
+          </a>
+
+          <div id="drop-soluciones" style="display:none; position:absolute; top:100%; left:0; width:240px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+            <a href="agua.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Agua</a>
+            <a href="aire.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Aire</a>
+            <a href="metrologia.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Metrología</a>
+            <a href="ingenieria.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;"> Ingeniería e Instrumentación</a>
+          </div>
+        </li>
+
+        <!-- INDUSTRIAS -->
+        <li style="position:relative;"
+            onmouseenter="document.getElementById('drop-industrias').style.display='block';"
+            onmouseleave="document.getElementById('drop-industrias').style.display='none';">
+
+          <a href="industrias.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+            Industrias <span style="font-size:11px;">▾</span>
+          </a>
+
+          <div id="drop-industrias" style="display:none; position:absolute; top:100%; left:0; width:240px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+            <a href="industrias.html#alimentos" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Alimentos y bebidas</a>
+            <a href="industrias.html#farma" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Farmacéutica</a>
+            <a href="industrias.html#quimica" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Química</a>
+            <a href="industrias.html#manufactura" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Manufactura</a>
+            <a href="industrias.html" style="display:block; padding:10px 12px; border-radius:6px; color:#568dc1; text-decoration:none; font-size:14px; font-weight:600;">Ver todas →</a>
+          </div>
+        </li>
+
+        <!-- GRUPO THERA -->
+        <li style="position:relative;"
+            onmouseenter="document.getElementById('drop-grupo').style.display='block';"
+            onmouseleave="document.getElementById('drop-grupo').style.display='none';">
+
+          <a href="quienessomos.html" style="display:flex; align-items:center; gap:4px; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">
+            Grupo Thera <span style="font-size:11px;">▾</span>
+          </a>
+
+          <div id="drop-grupo" style="display:none; position:absolute; top:100%; left:0; width:280px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.12); padding:8px; margin-top:6px;">
+            <div style="padding:8px 12px 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:#9ca3af;">Nosotros</div>
+            <a href="quienessomos.html#mision" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Misión, visión y valores</a>
+            <a href="quienessomos.html#trayectoria" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Trayectoria</a>
+            <a href="quienessomos.html#equipo" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Equipo</a>
+            <div style="height:1px; background:#e5e7eb; margin:6px 8px;"></div>
+            <a href="empresas-grupo.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Empresas del grupo</a>
+            <a href="acreditaciones.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Acreditaciones y aprobaciones</a>
+            <a href="testimonios.html" style="display:block; padding:10px 12px; border-radius:6px; color:#1f2937; text-decoration:none; font-size:14px;">Experiencias y testimonios</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="recursos.html" style="display:block; padding:12px 14px; color:#1f2937; text-decoration:none; font-size:15px; font-weight:500;">Recursos</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- HEADER ACTIONS -->
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button aria-label="Buscar" style="background:none; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; color:#1f2937;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="contacto.html" style="background:#106a9b; color:#ffffff; text-decoration:none; font-size:14px; font-weight:600; padding:11px 22px; border-radius:8px;">Contáctanos</a>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <main>
+    <section class="hero">
+      <div class="contenedor">
+        <h1>Construyamos un futuro más sostenible</h1>
+        <p>Estamos aquí para ayudarte a convertir tus desafíos ambientales en oportunidades de crecimiento responsable.</p>
+      </div>
+    </section>
+    <section class="contenedor contacto">
+      <div>
+        <h2>¿Hablamos?</h2>
+        <p class="contacto-intro">Cuéntanos qué necesitas. Nuestro equipo te responderá a la brevedad para encontrar juntos la mejor solución.</p>
+        <div class="datos">
+          <div class="dato"><span class="dato-icono">✉</span><div><strong>Correo electrónico</strong><a href="mailto:contacto@grupothera.com">contacto@grupothera.com</a></div></div>
+          <div class="dato"><span class="dato-icono">☎</span><div><strong>Teléfono</strong><a href="tel:+52 222 213 7100">+52 222 213 7100</a></div></div>
+          <div class="dato"><span class="dato-icono">⌖</span><div><strong>Oficina</strong><span>Santo Tomás de Aquino 8315, Col. Las Tres Cruces C.P. 72595</span></div></div>
+          <div class="dato"><span class="dato-icono">◷</span><div><strong>Horario de atención</strong><span>Lunes a viernes · 9:00 a 18:00</span></div></div>
+        </div>
+      </div>
+      <div class="formulario" id="formulario">
+        <h3>Envíanos un mensaje</h3>
+        <form action="#" method="post">
+          <div class="fila"><div><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required></div><div><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa"></div></div>
+          <div class="fila"><div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="tu@correo.com" required></div><div><label for="tema">¿En qué podemos ayudarte?</label><select id="tema" name="tema"><option>Selecciona una opción</option><option>Consultoría ambiental</option><option>Gestión de residuos</option><option>Otro proyecto</option></select></div></div>
+          <label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" placeholder="Cuéntanos un poco más sobre tu proyecto..." required></textarea>
+          <p class="aviso">Al enviar este formulario aceptas nuestra política de privacidad.</p>
+          <button class="boton" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+  
+
+
+
+
+
+
+  
+    <!-- OFFICES SECTION -->
+    <section class="offices">
+      <div class="container">
+        <p class="eyebrow center light">Dónde estamos</p>
+        <h2 class="center light">Nuestras oficinas</h2>
+
+        <div class="offices-grid">
+          <div class="office-card">
+            <h3>Oficinas CDMX</h3>
+            <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+            <p class="office-phone">Tels.: (55) 5552 4398<br>2612 3633 / 5768 3971</p>
+          </div>
+          <div class="office-card">
+            <h3>Oficinas Guadalajara, Jal.</h3>
+            <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+            <p class="office-phone">Tels.: (33) 3135 2360 / 3135 3483</p>
+          </div>
+          <div class="office-card">
+            <h3>Oficinas y Laboratorio</h3>
+            <p>Sto. Tomás de Aquino No. 8315<br>Puebla, Pue. C.P. 72595</p>
+            <p class="office-phone">Tel.: (222) 213 7100<br>con 10 líneas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Grupo Thera. Todos los derechos reservados.</p>
+        <p>Powered by ....</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

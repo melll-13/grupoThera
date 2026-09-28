@@ -245,7 +245,7 @@ h1, h2, h3 {
 .hero {
   position: relative;
   padding: 80px 0;
-  background: linear-gradient(180deg, #ffffff 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #b0d0ea 0%, #FFFFFF 100%);
   border-bottom: 0px solid #E2E8F0;
 }
 
@@ -872,3 +872,16 @@ h1, h2, h3 {
       .cta:hover {
         transform: translateY(-1px);
       }
+
+      /* --- Offices + footer (previously unstyled) --- */
+.offices { padding:70px 0; background:#fff; text-align:center; }
+.offices .center { text-align:center; margin:0 auto; }
+.offices .light { color:#9ca3af; }
+.offices h2 { margin-top:8px; margin-bottom:40px; font-size:clamp(1.6rem,3vw,2.2rem); color:var(--ink); }
+.offices-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; text-align:left; }
+.office-card { padding:26px; background:var(--soft); border:1px solid var(--line); border-radius:14px; }
+.office-card h3 { font-size:1.05rem; margin-bottom:8px; }
+.office-phone { margin:10px 0 0; font-size:.88rem; color:#4b5563; }
+.site-footer { padding:30px 0; background:#111827; color:#9ca3af; }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:.85rem; }
+@media (max-width:820px) { .offices-grid { grid-template-columns:1fr; } }
