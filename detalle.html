@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Vacante | Grupo Thera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #F8FAFC; padding: 40px 20px; font-family: sans-serif; color: #1E293B;">
+  
+  <div style="max-width: 800px; margin: auto;">
+    <!-- Botón para regresar -->
+    <a href="empleo.html" style="display: inline-block; color: #0D9488; text-decoration: none; font-weight: 600; margin-bottom: 24px;">← Volver a todas las vacantes</a>
+
+    <!-- Contenedor dinámico de la información de la vacante -->
+    <div id="detalle-vacante-container" style="background: #ffffff; padding: 48px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); margin-bottom: 32px;">
+      <p style="color: #64748B; text-align: center;">Cargando detalles de la vacante...</p>
+    </div>
+
+    <!-- Formulario de Postulación ubicado al final de la lectura -->
+    <div style="background: #ffffff; padding: 48px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+      <h3 style="font-size: 1.5rem; color: #0F172A; margin-bottom: 8px;">Envía tu postulación</h3>
+      <p style="color: #64748B; margin-bottom: 24px;">Completa tus datos para sumarte a nuestro equipo.</p>
+      
+      <form id="form-postulacion" onsubmit="enviarPostulacion(event)">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Nombre(s)</label>
+            <input type="text" id="nombre" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Apellido(s)</label>
+            <input type="text" id="apellido" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Correo Electrónico</label>
+          <input type="email" id="correo" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Teléfono</label>
+          <input type="tel" id="telefono" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">País</label>
+            <input type="text" id="pais" value="México" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Ciudad</label>
+            <input type="text" id="ciudad" value="Puebla" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Enlace de tu CV (LinkedIn o Drive)</label>
+          <input type="text" id="ruta_cv" placeholder="https://..." style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px;">
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 14px; background: #0D9488; color: white; border: none; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer;">Enviar Postulación</button>
+      </form>
+      <div id="mensaje-respuesta" style="margin-top: 16px; text-align: center; font-weight: 600;"></div>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const vacanteId = urlParams.get('vacante_id');
+
+    // Función auxiliar para convertir texto con saltos o viñetas en una lista HTML real
+    function formatearComoLista(texto) {
+        if (!texto) return '';
+        const lineas = texto.split(/\r?\n|•/).map(l => l.trim()).filter(l => l.length > 0);
+        if (lineas.length <= 1) return `<p style="color: #475569; line-height: 1.6; margin-bottom: 20px;">${texto}</p>`;
+        
+        let html = '<ul style="color: #475569; padding-left: 20px; line-height: 1.6; margin-bottom: 20px;">';
+        lineas.forEach(linea => {
+            html += `<li style="margin-bottom: 8px;">${linea}</li>`;
+        });
+        html += '</ul>';
+        return html;
+    }
+
+    async function cargarDetalleVacante() {
+        if (!vacanteId) {
+            document.getElementById('detalle-vacante-container').innerHTML = '<p style="color: red;">No se especificó ninguna vacante.</p>';
+            return;
+        }
+
+        try {
+            const response = await fetch('http://127.0.0.1:8001/api/vacantes');
+            const vacantes = await response.json();
+            const vacante = vacantes.find(v => v.id == vacanteId);
+
+            if (!vacante) {
+                document.getElementById('detalle-vacante-container').innerHTML = '<p style="color: red;">Vacante no encontrada.</p>';
+                return;
+            }
+
+            const container = document.getElementById('detalle-vacante-container');
+            container.innerHTML = `
+                <span style="background: #E6FFFA; color: #0D9488; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">${vacante.departamento || 'General'}</span>
+                <h1 style="font-size: 2.25rem; color: #0F172A; margin: 12px 0 8px 0;">${vacante.titulo}</h1>
+                <div style="color: #64748B; font-size: 0.95rem; margin-bottom: 24px;">📍 ${vacante.ubicacion || 'Puebla'}</div>
+
+                <div style="margin-top: 24px;">
+                    <h3 style="font-size: 1.2rem; color: #1E293B; margin-bottom: 8px;">Objetivo del Puesto</h3>
+                    <p style="color: #475569; line-height: 1.6; margin-bottom: 20px;">${vacante.objetivo || vacante.descripcion}</p>
+
+                    <h3 style="font-size: 1.2rem; color: #1E293B; margin-bottom: 8px;">Principales Funciones y Responsabilidades</h3>
+                    ${formatearComoLista(vacante.funciones)}
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #F8FAFC; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <div>
+                            <strong style="color: #1E293B; display: block; margin-bottom: 4px;">Formación Académica:</strong>
+                            <span style="color: #475569; font-size: 0.95rem;">${vacante.formacion_academica || 'N/A'}</span>
+                        </div>
+                        <div>
+                            <strong style="color: #1E293B; display: block; margin-bottom: 4px;">Formación Técnica:</strong>
+                            <span style="color: #475569; font-size: 0.95rem;">${vacante.formacion_tecnica || 'N/A'}</span>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.2rem; color: #1E293B; margin-bottom: 8px;">Competencias y Aptitudes</h3>
+                    <p style="color: #475569; line-height: 1.6; margin-bottom: 8px;"><strong>Competencias clave:</strong> ${vacante.competencias || ''}</p>
+                    <p style="color: #475569; line-height: 1.6;"><strong>Aptitudes:</strong> ${vacante.aptitudes || ''}</p>
+                </div>
+            `;
+        } catch (error) {
+            console.error('Error al cargar detalle:', error);
+            document.getElementById('detalle-vacante-container').innerHTML = '<p style="color: red;">Error al conectar con el servidor.</p>';
+        }
+    }
+
+    async function enviarPostulacion(event) {
+        event.preventDefault();
+        
+        const datos = {
+            vacante_id: parseInt(vacanteId),
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            correo: document.getElementById('correo').value,
+            telefono: document.getElementById('telefono').value,
+            pais: document.getElementById('pais').value,
+            ciudad: document.getElementById('ciudad').value,
+            ruta_cv: document.getElementById('ruta_cv').value
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:8001/api/postulaciones', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            });
+
+            if (response.ok) {
+                document.getElementById('mensaje-respuesta').style.color = "#0D9488";
+                document.getElementById('mensaje-respuesta').innerHTML = "¡Postulación enviada con éxito! Gracias por sumarte a Grupo Thera.";
+                document.getElementById('form-postulacion').reset();
+            } else {
+                throw new Error("Error al enviar");
+            }
+        } catch (error) {
+            document.getElementById('mensaje-respuesta').style.color = "red";
+            document.getElementById('mensaje-respuesta').innerHTML = "Hubo un error al registrar tu solicitud. Intenta de nuevo.";
+        }
+    }
+
+    window.onload = cargarDetalleVacante;
+  </script>
+</body>
+</html>

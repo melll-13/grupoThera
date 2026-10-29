@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postulación | Grupo Thera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #F8FAFC; padding: 40px 20px; font-family: sans-serif;">
+  <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <h2 style="color: #0F172A; margin-bottom: 8px;">Formulario de Postulación</h2>
+    <p style="color: #64748B; margin-bottom: 24px;">Estás postulándote para la vacante #<span id="job-id-display"></span></p>
+    
+    <form id="form-postulacion" onsubmit="enviarPostulacion(event)">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Nombre(s)</label>
+          <input type="text" id="nombre" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+        </div>
+        <div>
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Apellido(s)</label>
+          <input type="text" id="apellido" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 16px;">
+        <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Correo Electrónico</label>
+        <input type="email" id="correo" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Teléfono</label>
+        <input type="tel" id="telefono" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">País</label>
+          <input type="text" id="pais" value="México" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+        </div>
+        <div>
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Ciudad</label>
+          <input type="text" id="ciudad" value="Puebla" required style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+        </div>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Enlace de tu CV (LinkedIn o Drive)</label>
+        <input type="text" id="ruta_cv" placeholder="https://..." style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px;">
+      </div>
+
+      <button type="submit" style="width: 100%; padding: 12px; background: #0D9488; color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer;">Enviar Postulación</button>
+    </form>
+    <div id="mensaje-respuesta" style="margin-top: 16px; text-align: center; font-weight: 600;"></div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const vacanteId = urlParams.get('vacante_id');
+    document.getElementById('job-id-display').textContent = vacanteId || 'General';
+
+    async function enviarPostulacion(event) {
+        event.preventDefault();
+        
+        const datos = {
+            vacante_id: vacanteId ? parseInt(vacanteId) : 1,
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            correo: document.getElementById('correo').value,
+            telefono: document.getElementById('telefono').value,
+            pais: document.getElementById('pais').value,
+            ciudad: document.getElementById('ciudad').value,
+            ruta_cv: document.getElementById('ruta_cv').value
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:8001/api/postulaciones', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            });
+
+            if (response.ok) {
+                document.getElementById('mensaje-respuesta').style.color = "green";
+                document.getElementById('mensaje-respuesta').innerHTML = "¡Postulación enviada con éxito! Gracias por sumarte.";
+                document.getElementById('form-postulacion').reset();
+            } else {
+                throw new Error("Error al enviar");
+            }
+        } catch (error) {
+            document.getElementById('mensaje-respuesta').style.color = "red";
+            document.getElementById('mensaje-respuesta').innerHTML = "Hubo un error al registrar tu solicitud. Intenta de nuevo.";
+        }
+    }
+  </script>
+</body>
+</html>

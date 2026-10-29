@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Soluciones avanzadas de Grupo Thera en ingeniería, instrumentación, control y automatización industrial.">
+<title>Soluciones en Ingeniería e Instrumentación | Grupo Thera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0d5c75;--accent:#00a8cc;--dark:#072a38;--surface:#f8fafc;--border:#cbd5e1;--text:#334155;--muted:#64748b;--light-bg:#f0f9ff}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);background:#fff;font-family:Inter,sans-serif;line-height:1.6}
+h1,h2,h3{margin:0;font-family:'Plus Jakarta Sans',sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+
+/* Header estilizado con acento industrial */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav{height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav img{height:42px;display:block}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.menu>li{position:relative}
+.menu>li>a{display:block;padding:10px 16px;font-size:14px;font-weight:600;color:var(--dark);border-radius:6px;transition:background .2s}
+.menu>li>a:hover{background:var(--light-bg);color:var(--primary)}
+.dd{display:none;position:absolute;top:100%;left:0;width:260px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 36px rgba(7,42,56,.08);padding:8px}
+.menu>li:hover .dd{display:block}
+.dd a{display:block;padding:10px 12px;border-radius:8px;font-size:14px;font-weight:500}
+.dd a:hover{background:var(--light-bg);color:var(--primary)}
+.cta{background:var(--primary);color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px;transition:background .2s}
+.cta:hover{background:var(--dark)}
+@media(max-width:900px){.menu{display:none}}
+
+/* Hero con patrón técnico */
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,var(--dark),var(--primary));padding:120px 0;border-bottom:4px solid var(--accent)}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(0,168,204,.15) 1px,transparent 1px);background-size:24px 24px;opacity:.6}
+.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;padding:6px 14px;background:rgba(0,168,204,.2);border:1px solid rgba(0,168,204,.4);border-radius:20px;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7ee7ff}
+.hero h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;letter-spacing:-.03em;color:#fff}
+.hero p{margin:24px 0 0;color:#e2e8f0;font-size:1.1rem;line-height:1.7}
+.hero-badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;backdrop-filter:blur(6px)}
+.hero-badge ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.hero-badge li{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.88rem;color:#bae6fd}
+.hero-badge li::before{content:'⚡';color:var(--accent)}
+
+/* Sections */
+.section{padding:100px 0}
+.alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.head{max-width:700px;margin-bottom:50px}
+.head h2{font-size:clamp(1.9rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.02em;color:var(--dark)}
+.head p{margin:16px 0 0;color:var(--muted);font-size:1.05rem}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* Servicios - Tarjetas asimétricas con acento superior */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px 30px;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.03);transition:transform .3s,box-shadow .3s}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent)}
+.card:hover{transform:-translateY(6px);box-shadow:0 16px 32px rgba(7,42,56,.08)}
+.ico{width:56px;height:56px;display:grid;place-items:center;margin-bottom:24px;background:var(--light-bg);border-radius:12px;font-size:1.6rem;border:1px solid rgba(0,168,204,.2)}
+.card h3{font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:14px}
+.card ul{margin:0;padding:0;list-style:none}
+.card li{position:relative;padding-left:22px;margin:10px 0;color:var(--text);font-size:.95rem}
+.card li::before{content:'—';position:absolute;left:0;color:var(--accent);font-weight:700}
+.more{display:inline-flex;align-items:center;gap:8px;margin-top:36px;color:var(--primary);font-weight:700;font-size:.95rem}
+.more:hover{color:var(--accent)}
+
+/* Capacidades - Tarjetas técnicas compactas con fuente mono */
+.tiles9{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tile{background:#fff;border:1px solid var(--border);border-radius:12px;padding:28px 20px;text-align:left;display:flex;align-items:center;gap:16px;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.02)}
+.tile:hover{border-color:var(--accent);background:var(--light-bg);transform:translateY(-3px)}
+.tile span{font-size:2rem;flex-shrink:0}
+.tile-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--dark)}
+
+/* Beneficios - Estilo oscuro estructurado con bordes finos */
+.dark{background:var(--dark);color:#fff;position:relative}
+.dark .head h2{color:#fff}
+.dark .head p{color:#94a3b8}
+.bcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;transition:border-color .2s}
+.bcard:hover{border-color:var(--accent)}
+.bcard .ico{background:rgba(0,168,204,.15);border:1px solid rgba(0,168,204,.3)}
+.bcard h3{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:10px}
+.bcard p{margin:0;color:#cbd5e1;font-size:.92rem;line-height:1.6}
+.dark .more{color:#7ee7ff}
+
+/* Contacto tipo panel de control */
+.contact{padding:80px 0;background:linear-gradient(135deg,var(--primary),var(--dark));color:#fff}
+.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:40px}
+.contact h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800}
+.contact p{margin:12px 0 0;color:#e2e8f0;font-size:1.05rem}
+.button{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;color:var(--dark);background:#fff;border-radius:8px;font-weight:800;font-size:1rem;transition:background .2s,transform .2s}
+.button:hover{background:var(--light-bg);transform:translateY(-2px)}
+
+/* Oficinas y Footer */
+.offices{padding:90px 0;text-align:center}
+.offices h2{margin:8px 0 44px;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--dark)}
+.ogrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;text-align:left}
+.ocard{padding:30px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
+.ocard h3{font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:10px}
+.ocard p{margin:8px 0 0;font-size:.9rem;color:var(--muted)}
+.site-footer{padding:32px 0;background:#03141b;color:#64748b;font-size:.85rem;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-inner p{margin:0}
+
+/* Animación */
+.fade{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.fade.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+
+/* Responsive */
+@media(max-width:900px){
+ .hero .container{grid-template-columns:minmax(0,1fr);gap:30px}
+ .grid3,.ogrid,.tiles9{grid-template-columns:minmax(0,1fr)}
+ .contact-inner{display:block}.contact .button{margin-top:24px}
+ .section{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <a href="index.html"><img src="assets/GRUPO-THERA.png" alt="Grupo Thera"></a>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Soluciones ▾</a>
+        <div class="dd"><a href="agua.html">Agua</a><a href="aire.html">Aire</a><a href="metrologia.html">Metrología</a><a href="ingenieria.html">Ingeniería e Instrumentación</a></div></li>
+      <li><a href="industrias.html">Industrias ▾</a>
+        <div class="dd"><a href="industrias.html#alimentos">Alimentos y bebidas</a><a href="industrias.html#farma">Farmacéutica</a><a href="industrias.html#quimica">Química</a><a href="industrias.html#manufactura">Manufactura</a><a href="industrias.html" style="color:var(--primary);font-weight:700">Ver todas →</a></div></li>
+      <li><a href="quienessomos.html">Grupo Thera ▾</a>
+        <div class="dd" style="width:280px"><a href="quienessomos.html#mision">Misión, visión y valores</a><a href="quienessomos.html#trayectoria">Trayectoria</a><a href="quienessomos.html#equipo">Equipo</a><a href="empresas-grupo.html">Empresas del grupo</a><a href="acreditaciones.html">Acreditaciones y aprobaciones</a><a href="testimonios.html">Experiencias y testimonios</a></div></li>
+      <li><a href="recursos.html">Recursos</a></li>
+    </ul>
+    <a class="cta" href="contacto.html">Contáctanos</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="fade">
+      <div class="eyebrow">División Sistemas & Control</div>
+      <h1>SOLUCIONES EN INGENIERÍA E INSTRUMENTACIÓN</h1>
+      <p>Diseñamos, desarrollamos e integramos soluciones de ingeniería para mejorar el desempeño de los procesos industriales mediante tecnologías de medición, control y automatización.</p>
+    </div>
+    <div class="fade">
+      <div class="hero-badge">
+        <ul>
+          <li>Ingeniería conceptual y de detalle</li>
+          <li>Automatización y control industrial</li>
+          <li>Sistemas llave en mano</li>
+          <li>Optimización de combustión</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section"><div class="container">
+  <div class="head fade"><div class="eyebrow" style="background:var(--light-bg);border-color:rgba(16,106,155,.2);color:var(--primary)">Servicios Especializados</div><h2>Del diseño conceptual a la optimización de procesos</h2><p>Acompañamos cada fase del proyecto industrial con ingeniería especializada y sistemas llave en mano.</p></div>
+  <div class="grid3">
+    <div class="card fade"><div class="ico">📐</div><h3>Diseño e integración</h3><ul>
+      <li>Ingeniería conceptual y de detalle</li>
+      <li>Diseño e integración de sistemas</li>
+      <li>Soluciones llave en mano</li>
+    </ul></div>
+    <div class="card fade"><div class="ico">⚙️</div><h3>Automatización y control</h3><ul>
+      <li>Automatización industrial</li>
+      <li>Instrumentación y control</li>
+      <li>Optimización de sistemas de combustión</li>
+    </ul></div>
+    <div class="card fade"><div class="ico">🔧</div><h3>Implementación y soporte</h3><ul>
+      <li>Instalación y puesta en marcha</li>
+      <li>Integración de sistemas de adquisición de datos</li>
+      <li>Mantenimiento industrial y modernización</li>
+    </ul></div>
+  </div>
+  <a class="more fade" href="contacto.html">Solicitar información técnica →</a>
+</div></section>
+
+<!-- CAPACIDADES -->
+<section class="section alt"><div class="container">
+  <div class="head center fade"><div class="eyebrow" style="background:var(--light-bg);border-color:rgba(16,106,155,.2);color:var(--primary)">Capacidades Técnicas</div><h2>Tecnologías y especialidades aplicadas</h2></div>
+  <div class="tiles9">
+    <div class="tile fade"><span>📟</span><div class="tile-text">Instrumentación industrial</div></div>
+    <div class="tile fade"><span>💻</span><div class="tile-text">PLC y automatización</div></div>
+    <div class="tile fade"><span>⚡</span><div class="tile-text">Sistemas eléctricos</div></div>
+    <div class="tile fade"><span>💨</span><div class="tile-text">Sistemas neumáticos</div></div>
+    <div class="tile fade"><span>💧</span><div class="tile-text">Sistemas hidráulicos</div></div>
+    <div class="tile fade"><span>🧪</span><div class="tile-text">Analizadores de gases</div></div>
+    <div class="tile fade"><span>⚙️</span><div class="tile-text">Diseño mecánico</div></div>
+    <div class="tile fade"><span>🔥</span><div class="tile-text">Trenes de fuerza</div></div>
+    <div class="tile fade"><span>🌐</span><div class="tile-text">Redes de comunicación industrial</div></div>
+  </div>
+</div></section>
+
+<!-- BENEFICIOS -->
+<section class="section dark"><div class="container">
+  <div class="head fade"><div class="eyebrow">Beneficios Operativos</div><h2>Desempeño superior para sus instalaciones</h2><p>Soluciones orientadas a potenciar la eficiencia, la confiabilidad y la continuidad de sus operaciones.</p></div>
+  <div class="grid3">
+    <div class="bcard fade"><div class="ico">📈</div><h3>Mayor eficiencia operativa</h3><p>Optimice el rendimiento global de sus procesos productivos.</p></div>
+    <div class="bcard fade"><div class="ico">⏱️</div><h3>Reducción de tiempos de paro</h3><p>Minimice interrupciones imprevistas en su operación.</p></div>
+    <div class="bcard fade"><div class="ico">⚡</div><h3>Optimización energética</h3><p>Gestione el consumo de recursos de manera más inteligente.</p></div>
+    <div class="bcard fade"><div class="ico">🚀</div><h3>Integración tecnológica</h3><p>Incorpore nuevas tecnologías sin fricciones en su planta.</p></div>
+    <div class="bcard fade"><div class="ico">🛡️</div><h3>Mayor confiabilidad</h3><p>Asegure la estabilidad y consistencia de sus procesos.</p></div>
+    <div class="bcard fade"><div class="ico">🎯</div><h3>Soluciones a la medida</h3><p>Diseños perfectamente adaptados a cada instalación específica.</p></div>
+  </div>
+  <a class="more fade" href="mailto:contacto@grupothera.com">Solicitar asesoría de ingeniería →</a>
+</div></section>
+
+<!-- CONTACTO -->
+<section class="contact"><div class="container contact-inner">
+  <div><h2>Hablemos de su proyecto de ingeniería</h2><p>Solicite una propuesta a la medida para su operación industrial.</p></div>
+  <a class="button" href="mailto:contacto@grupothera.com">Cotizar solución en ingeniería</a>
+</div></section>
+</main>
+
+<!-- OFICINAS -->
+<section class="offices"><div class="container">
+  <div class="eyebrow" style="background:var(--light-bg);border-color:rgba(16,106,155,.2);color:var(--primary);display:inline-block;margin-bottom:8px">Presencia Nacional</div>
+  <h2>Nuestras oficinas</h2>
+  <div class="ogrid">
+    <div class="ocard"><h3>Oficinas CDMX</h3><p><em>Oficina comercial</em></p><p>Tels.: (55) 5552 4398<br>2612 3633 / 5768 3971</p></div>
+    <div class="ocard"><h3>Oficinas Guadalajara, Jal.</h3><p><em>Oficina comercial</em></p><p>Tels.: (33) 3135 2360 / 3135 3483</p></div>
+    <div class="ocard"><h3>Oficinas y Laboratorio</h3><p>Sto. Tomás de Aquino No. 8315<br>Puebla, Pue. C.P. 72595</p><p>Tel.: (222) 213 7100<br>con 10 líneas</p></div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <p>© 2026 Grupo Thera. Todos los derechos reservados.</p><p>Powered by ....</p>
+</div></footer>
+
+<script>
+/* Aparición suave al hacer scroll */
+(function(){
+  var els=document.querySelectorAll('.fade');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

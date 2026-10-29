@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sectores e Industrias | Grupo Thera</title>
+  <meta name="description" content="Soluciones técnicas, ambientales y de ingeniería adaptadas a los retos de la industria municipal, energía, manufactura, alimentos, farmacéutica y más.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos específicos para la navegación de industrias */
+    .industries-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      margin-top: 36px;
+    }
+    .industry-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .industry-tab {
+      padding: 16px 20px;
+      border: 1px solid #E2E8F0;
+      background: var(--white);
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+    .industry-tab.active, .industry-tab:hover {
+      background: var(--primary-navy);
+      color: var(--white);
+      border-color: var(--primary-navy);
+      transform: translateX(4px);
+    }
+    .industry-display-panel {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      border: 1px solid #E2E8F0;
+      box-shadow: var(--shadow-sm);
+    }
+    .industry-display-panel h3 {
+      color: var(--primary-navy);
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .industry-display-panel p.lead {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .industry-grid-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    .industry-card-col {
+      background: var(--bg-light);
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-sm);
+      padding: 24px;
+    }
+    .industry-card-col h4 {
+      color: var(--primary-teal);
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .industry-card-col ul {
+      padding-left: 18px;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .industry-card-col li { margin-bottom: 8px; }
+    
+    @media(max-width: 900px) {
+      .industries-layout, .industry-grid-split { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV (Estándar unificado) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html">
+        <img src="assets/GRUPO-THERA.png" alt="Grupo Thera Logo" class="logo-image">
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li class="has-sub">
+            <a href="servicios.html">Soluciones <span class="chevron">▾</span></a>
+            <div class="sub-menu">
+              <a href="agua.html">Agua</a>
+              <a href="aire.html">Aire</a>
+              <a href="metrologia.html">Metrología</a>
+              <a href="ingenieria.html">Ingeniería e Instrumentación</a>
+            </div>
+          </li>
+          <li class="has-sub">
+            <a href="industrias.html" style="color: var(--accent-green); font-weight:600;">Industrias <span class="chevron">▾</span></a>
+            <div class="sub-menu">
+              <a href="industrias.html#alimentos">Alimentos y bebidas</a>
+              <a href="industrias.html#farma">Farmacéutica</a>
+              <a href="industrias.html#quimica">Química</a>
+              <a href="industrias.html#manufactura">Manufactura</a>
+              <a href="industrias.html" style="color: var(--primary-teal); font-weight:600;">Ver todas →</a>
+            </div>
+          </li>
+          <li class="has-sub">
+            <a href="quienessomos.html">Grupo Thera <span class="chevron">▾</span></a>
+            <div class="sub-menu" style="min-width: 260px;">
+              <span style="padding: 6px 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-light);">Nosotros</span>
+              <a href="quienessomos.html#mision">Misión, visión y valores</a>
+              <a href="quienessomos.html#trayectoria">Trayectoria</a>
+              <a href="quienessomos.html#equipo">Equipo</a>
+              <div style="height:1px; background:#E2E8F0; margin:6px 0;"></div>
+              <a href="empresas-grupo.html">Empresas del grupo</a>
+              <a href="acreditaciones.html">Acreditaciones y aprobaciones</a>
+              <a href="testimonios.html">Experiencias y testimonios</a>
+            </div>
+          </li>
+          <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button aria-label="Buscar" class="icon-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <a href="contacto.html" class="btn btn-accent" style="padding: 10px 20px; font-size: 0.9rem;">Contáctanos</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="padding: 70px 0;">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="badge-tag">Sectores de Aplicación</div>
+        <h1>Soluciones adaptadas a cada <span style="background: linear-gradient(90deg, #0a3458, #3cb4d5, #6fbcfc); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">industria y reto operativo</span></h1>
+        <p class="hero-text">
+          Identifica los retos normativos y operativos característicos de tu giro y descubre las soluciones especializadas que integran Welfare Ecología Industrial y Precisión Instrumental Aplicada.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT: SECTOR NAV INTERACTIVE -->
+  <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
+    
+    <section>
+      <p class="eyebrow">Navegación por Giro</p>
+      <h2 style="font-size: 2.2rem; color: var(--primary-navy); margin-bottom: 8px;">¿A qué sector pertenece tu organización?</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">Selecciona una industria para conocer los requerimientos frecuentes y las rutas de servicio correspondientes.</p>
+
+      <div class="industries-layout">
+        <div class="industry-nav-list" role="tablist">
+          <button class="industry-tab active" data-sector="municipal">Municipal</button>
+          <button class="industry-tab" data-sector="energia">Energía y Procesos</button>
+          <button class="industry-tab" data-sector="manufactura">Manufactura</button>
+          <button class="industry-tab" data-sector="consumo">Consumo y Salud</button>
+          <button class="industry-tab" data-sector="alimentos" id="alimentos">Alimentos y Bebidas</button>
+          <button class="industry-tab" data-sector="farma" id="farma">Farmacéutica y Química</button>
+        </div>
+
+        <div class="industry-display-panel" id="industry-panel-content">
+          <!-- Contenido inyectado dinámicamente vía script -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR / UN SOLO ALIADO -->
+    <section style="margin-top: 90px; background: var(--bg-light); border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 50px 40px; text-align: center;">
+      <p class="eyebrow">Un solo aliado técnico</p>
+      <h2 style="font-size: 2rem; color: var(--primary-navy); margin-bottom: 16px;">Gestión ambiental, metrología e ingeniería sin fricciones</h2>
+      <p style="color: var(--text-muted); max-width: 760px; margin: 0 auto 28px; line-height: 1.7;">
+        Ya sea que requieras muestreo de laboratorio acreditado ante la EMA (vía Welfare) o calibración, automatización de procesos e instrumentación de alta precisión (vía PIA), te acompañamos de principio a fin.
+      </p>
+      <a href="contacto.html" class="btn btn-accent">Solicitar un diagnóstico especializado</a>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT DE SECTORES E INDUSTRIAS -->
+  <script>
+    const sectorData = {
+      municipal: {
+        title: "Sector Municipal",
+        desc: "Soluciones enfocadas en la gestión eficiente del agua, tratamiento de aguas residuales, reducción de contaminantes y monitoreo de la calidad del aire en entornos públicos.",
+        challenges: [
+          "Garantizar la calidad del agua y el cumplimiento riguroso de parámetros ambientales.",
+          "Optimizar el funcionamiento de plantas de tratamiento de agua y redes de drenaje.",
+          "Controlar emisiones asociadas al transporte y fuentes públicas de servicios.",
+          "Monitorear indicadores clave de impacto ambiental comunitario."
+        ],
+        solutions: [
+          "Muestreo y caracterización de aguas residuales (Welfare).",
+          "Evaluación y diagnóstico de plantas de tratamiento de agua (Welfare / PIA).",
+          "Medición continua de consumo con medidores electromagnéticos y Canal Parshall (PIA).",
+          "Sistemas de monitoreo remoto y adquisición de datos en tiempo real (PIA)."
+        ]
+      },
+      energia: {
+        title: "Sector Energía y Procesos",
+        desc: "Soporte técnico de alta especialización para generación eléctrica, petroquímica, química, cementera y minería.",
+        challenges: [
+          "Controlar y reducir de forma estricta las emisiones de sistemas de combustión industrial.",
+          "Mantener una combustión eficiente bajo límites regulatorios dinámicos.",
+          "Garantizar la trazabilidad y disponibilidad de analizadores de gases críticos.",
+          "Asegurar la continuidad operativa ininterrumpida en instalaciones complejas."
+        ],
+        solutions: [
+          "Instalación y validación de Sistemas de Monitoreo Continuo de Emisiones - CEMS (PIA).",
+          "Pruebas de desempeño (Performance Test) y RATA Test (Welfare / PIA).",
+          "Calibración acreditada ISO/IEC 17025 de analizadores de gases (PIA).",
+          "Ingeniería de control, automatización y optimización de trenes de fuerza (PIA)."
+        ]
+      },
+      manufactura: {
+        title: "Sector Manufactura",
+        desc: "Atención integral para industrias metalmecánica, automotriz, textil, construcción y manufactura general.",
+        challenges: [
+          "Controlar el impacto ambiental de operaciones productivas y descargas al drenaje.",
+          "Garantizar la precisión absoluta de instrumentos de medición y control de planta.",
+          "Minimizar desperdicios, consumos excesivos y tiempos de paro imprevistos.",
+          "Cumplir con especificaciones técnicas y auditorías de calidad de clientes."
+        ],
+        solutions: [
+          "Estudios de fuentes fijas, ruido perimetral y descargas de agua (Welfare).",
+          "Mantenimiento preventivo, correctivo y ajuste de instrumentos industriales (PIA).",
+          "Automatización e integración de tecnologías sin afectar las líneas de producción (PIA).",
+          "Asesoría técnica para integración de expedientes normativos."
+        ]
+      },
+      consumo: {
+        title: "Sector Consumo y Salud",
+        desc: "Soluciones diseñadas para proteger la inocuidad y la calidad en industrias de bienes de consumo y operaciones sensibles.",
+        challenges: [
+          "Asegurar la calidad e inocuidad del recurso hídrico utilizado en procesos críticos.",
+          "Mantener bajo control estricto las variables de producción y áreas limpias.",
+          "Asegurar la trazabilidad metrológica total de los equipos de medición.",
+          "Responder con agilidad ante requisitos regulatorios sanitarios y ambientales."
+        ],
+        solutions: [
+          "Análisis fisicoquímico y microbiológico especializado de agua (Welfare).",
+          "Calibración rigurosa de equipos de medición y control (PIA).",
+          "Generación de documentación e informes técnicos válidos para auditorías.",
+          "Integración de sistemas de control para procesos limpios y trazables (PIA)."
+        ]
+      },
+      alimentos: {
+        title: "Industria de Alimentos y Bebidas",
+        desc: "Acompañamiento técnico para asegurar el cumplimiento regulatorio en procesos de transformación, envasado y tratamiento de efluentes.",
+        challenges: [
+          "Cumplimiento de normativas estrictas en descargas de aguas residuales industriales.",
+          "Control de emisiones por calderas y equipos generadores de vapor.",
+          "Calibración y mantenimiento de instrumentación en líneas de proceso."
+        ],
+        solutions: [
+          "Caracterización de descargas y matrices de cumplimiento (Welfare).",
+          "Evaluación de emisiones en fuentes fijas y calderas (Welfare).",
+          "Calibración de instrumentos de temperatura, presión y flujo (PIA)."
+        ]
+      },
+      farma: {
+        title: "Industria Farmacéutica y Química",
+        desc: "Altos estándares de precisión, validación metrológica y control ambiental para procesos de alta exigencia analítica.",
+        challenges: [
+          "Trazabilidad metrológica indiscutible para auditorías internacionales.",
+          "Monitoreo ambiental estricto de emisiones y calidad de agua de proceso.",
+          "Control automatizado de variables críticas de instrumentación."
+        ],
+        solutions: [
+          "Calibración de analizadores especializados bajo norma ISO/IEC 17025 (PIA).",
+          "Monitoreo analítico de agua y aire bajo protocolos normativos (Welfare).",
+          "Desarrollo de proyectos de instrumentación y control a la medida (PIA)."
+        ]
+      }
+    };
+
+    function renderSector(key) {
+      const data = sectorData[key];
+      document.getElementById('industry-panel-content').innerHTML = `
+        <h3>${data.title}</h3>
+        <p class="lead">${data.desc}</p>
+        <div class="industry-grid-split">
+          <div class="industry-card-col">
+            <h4>⚙️ Retos comunes</h4>
+            <ul>${data.challenges.map(c => `<li>${c}</li>`).join('')}</ul>
+          </div>
+          <div class="industry-card-col">
+            <h4>🛡️ Soluciones Grupo Thera</h4>
+            <ul>${data.solutions.map(s => `<li>${s}</li>`).join('')}</ul>
+          </div>
+        </div>
+        <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="contacto.html" class="btn btn-primary" style="font-size: 0.9rem; padding: 10px 20px;">Solicitar diagnóstico para este sector</a>
+        </div>
+      `;
+    }
+
+    document.querySelectorAll('.industry-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.industry-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderSector(tab.dataset.sector);
+      });
+    });
+
+    // Cargar sector por defecto al abrir la página
+    renderSector('municipal');
+
+    // Manejar hash en URL si el usuario llega desde un enlace como #alimentos o #farma
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (sectorData[hash]) {
+        document.querySelectorAll('.industry-tab').forEach(t => t.classList.remove('active'));
+        const targetTab = document.querySelector(`[data-sector="${hash}"]`);
+        if (targetTab) {
+          targetTab.classList.add('active');
+          renderSector(hash);
+        }
+      }
+    });
+  </script>
+
+  <!-- OFFICES SECTION -->
+  <section class="offices">
+    <div class="container">
+      <p class="eyebrow center light">Dónde estamos</p>
+      <h2 class="center light">Nuestras oficinas</h2>
+
+      <div class="offices-grid">
+        <div class="office-card">
+          <h3>Oficinas CDMX</h3>
+          <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+          <p class="office-phone">Tels.: (55) 5552 4398<br>2612 3633 / 5768 3971</p>
+        </div>
+        <div class="office-card">
+          <h3>Oficinas Guadalajara, Jal.</h3>
+          <p style="font-style: italic; color: #9ca3af;">Oficina comercial</p>
+          <p class="office-phone">Tels.: (33) 3135 2360 / 3135 3483</p>
+        </div>
+        <div class="office-card">
+          <h3>Oficinas y Laboratorio</h3>
+          <p>Sto. Tomás de Aquino No. 8315<br>Puebla, Pue. C.P. 72595</p>
+          <p class="office-phone">Tel.: (222) 213 7100<br>con 10 líneas</p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61587414834705" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.4H7.7V13h2.7v8h3.1z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/grup.othera/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.2c-.1-1.6-.4-3-1.6-4.2S16.8 2.1 15.2 2C13.6 1.9 10.4 1.9 8.8 2 7.2 2.1 5.8 2.4 4.6 3.6S2.9 6.2 2.8 7.8c-.1 1.6-.1 4.8 0 6.4.1 1.6.4 3 1.6 4.2s2.6 1.7 4.2 1.8c1.6.1 4.8.1 6.4 0 1.6-.1 3-.4 4.2-1.6s1.7-2.6 1.8-4.2c.1-1.6.1-4.8 0-6.4zM19 17.5a2.7 2.7 0 0 1-1.5 1.5c-1 .4-3.4.3-4.5.3s-3.5.1-4.5-.3A2.7 2.7 0 0 1 7 17.5c-.4-1-.3-3.4-.3-4.5s-.1-3.5.3-4.5A2.7 2.7 0 0 1 8.5 7c1-.4 3.4-.3 4.5-.3s3.5-.1 4.5.3A2.7 2.7 0 0 1 19 8.5c.4 1 .3 3.4.3 4.5s.1 3.5-.3 4.5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/grupo-thera-soluciones/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.5 3A1.8 1.8 0 1 0 4.5 6.6 1.8 1.8 0 0 0 4.5 3zM3 8.5h3V21H3V8.5zm5 0h2.9v1.7h.1c.4-.8 1.4-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21h-3v-6.8c0-1.6 0-3.7-2.2-3.7s-2.6 1.8-2.6 3.6V21H8V8.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Grupo Thera. Todos los derechos reservados.</p>
+      <p>Powered by ....</p>
+    </div>
+  </footer>
+
+</body>
+</html>

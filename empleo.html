@@ -180,6 +180,188 @@
     }
   </style>
 </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabaja con nosotros | Grupo Thera</title>
+  <meta name="description" content="Únete al equipo de Grupo Thera. Conoce nuestras oportunidades profesionales y desarrolla tu carrera con nosotros.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos específicos y modernos integrados con tu style.css */
+    .hero-art-centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      min-height: 380px;
+    }
+
+    .art-card-modern {
+      width: 100%;
+      max-width: 360px;
+      background: var(--white);
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: 24px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .art-card-modern img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+    }
+
+    .art-card-modern .art-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .art-dots { 
+      display: flex; 
+      gap: 5px; 
+    }
+    
+    .art-dots i { 
+      width: 6px; 
+      height: 6px; 
+      border-radius: 50%; 
+      background: var(--text-light); 
+    }
+
+    .art-foot { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      color: var(--text-muted); 
+      font-size: 0.8rem;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 12px;
+      margin-top: 12px;
+    }
+
+    .art-foot strong { 
+      color: var(--accent-green); 
+      font-size: 0.85rem; 
+    }
+
+    .float-tag-modern {
+      position: absolute;
+      padding: 10px 16px;
+      background: var(--white);
+      border-radius: 99px;
+      box-shadow: var(--shadow-md);
+      font-weight: 600;
+      font-size: 0.8rem;
+      z-index: 3;
+      border: 1px solid #E2E8F0;
+    }
+    
+    .float-tag-modern.one { 
+      top: 10px; 
+      right: 10px; 
+      color: var(--accent-green); 
+    }
+    
+    .float-tag-modern.two { 
+      bottom: 10px; 
+      left: 10px; 
+      color: var(--primary-teal); 
+    }
+
+    /* Sección CTA Centrada */
+    .cta-centered {
+      text-align: center;
+      padding: 90px 24px;
+      background: var(--bg-light);
+      border-top: 1px solid #E2E8F0;
+    }
+
+    .cta-inner-modern {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 50px 32px;
+      border-radius: var(--radius-lg);
+      background: var(--primary-navy);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-inner-modern h2 {
+      color: var(--white);
+      margin-bottom: 16px;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+    }
+
+    .cta-inner-modern p {
+      margin: 0 auto 28px;
+      max-width: 560px;
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    /* Beneficios con estilo unificado */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid #E2E8F0;
+      padding: 36px 28px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-green);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ice-blue);
+      color: var(--primary-teal);
+      border-radius: var(--radius-sm);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head> 
 <body>
   
   <!-- HEADER / NAV -->
@@ -253,17 +435,6 @@
     </div>
   </header>
 
-
-
-
-
-
-
-
-
-
-
-
   <main>
     <section class="hero">
       <div class="container hero-inner">
@@ -272,17 +443,16 @@
           <h1>Crece con un equipo que <span>cuida de las personas.</span></h1>
           <p class="hero-text">En Grupo Thera creemos que el bienestar empieza con quienes lo hacen posible. Súmate a un equipo cercano, comprometido y con ganas de construir algo mejor.</p>
           <div class="hero-actions">
-            <a class="btn btn-accent" href="#vacante">Conoce la vacante <span aria-hidden="true" style="margin-left: 6px;">↓</span></a>
+            <a class="btn btn-accent" href="#vacante">Conoce las vacantes <span aria-hidden="true" style="margin-left: 6px;">↓</span></a>
           </div>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Un gran siguiente paso comienza aquí.</span>
         </div>
 
-        <!-- HERO ART / TARJETA CENTRADA CON ESPACIO PARA IMAGEN -->
+        <!-- HERO ART -->
         <div class="hero-art-centered" aria-label="Ilustración de un equipo colaborando">
           <span class="float-tag-modern one">✦ Talento con propósito</span>
           
           <div class="art-card-modern">
-            <!-- REEMPLAZA "tu-imagen.jpg" por la ruta de tu foto -->
             <img src="assets/tu-imagen.jpg" alt="Equipo Grupo Thera">
             
             <div class="art-head">
@@ -326,29 +496,19 @@
       </div>
     </section>
 
+    <!-- VACANTES DINÁMICAS SECTION -->
     <section style="background: var(--bg-light); padding: 110px 0; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;" id="vacante">
       <div class="container">
         <div class="center" style="max-width: 600px; margin: 0 auto 56px;">
           <span class="eyebrow">Oportunidades</span>
-          <h2 style="font-size: clamp(1.8rem, 3vw, 2.3rem); color: var(--primary-navy); margin-bottom: 12px;">Una oportunidad para ti</h2>
-          <p style="color: var(--text-muted);">Conoce nuestra vacante de ejemplo y da el siguiente paso en tu carrera.</p>
+          <h2 style="font-size: clamp(1.8rem, 3vw, 2.3rem); color: var(--primary-navy); margin-bottom: 12px;">Vacantes abiertas</h2>
+          <p style="color: var(--text-muted);">Explora nuestras oportunidades disponibles y da el siguiente paso en tu carrera.</p>
         </div>
         
-        <article style="max-width: 850px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 28px; padding: 36px; background: var(--white); border: 1px solid #E2E8F0; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <div>
-            <span class="badge-tag" style="margin-bottom: 12px;">Tiempo completo · Híbrido</span>
-            <h3 style="font-size: 1.35rem; color: var(--primary-navy); margin-bottom: 8px;">Técnico Calibrador</h3>
-            <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 14px;">📍 Puebla &nbsp;·&nbsp; Área: Ingeniería</div>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Buscamos a alguien organizado y empático para acompañar procesos de selección, apoyar iniciativas de desarrollo y contribuir a una gran experiencia para nuestro equipo.</p>
-          </div>
-          <div style="text-align: right;">
-            <a class="btn btn-accent" href="mailto:talento@grupothera.com?subject=Postulaci%C3%B3n%20-%20Coordinador%2Fa%20de%20Recursos%20Humanos">Postularme <span aria-hidden="true" style="margin-left: 6px;">→</span></a>
-            <small style="display: block; color: var(--text-muted); margin-top: 10px; font-size: 0.78rem;">Envía tu CV por correo</small>
-          </div>
-        </article>
-
-
-
+        <!-- Contenedor donde se cargarán las vacantes desde PostgreSQL -->
+        <div id="vacantes-container" style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+          <p style="text-align: center; color: var(--text-muted);">Cargando vacantes disponibles...</p>
+        </div>
 
       </div>
     </section>
@@ -391,9 +551,80 @@
   <footer style="padding: 30px 24px; border-top: 1px solid #E2E8F0; color: var(--text-muted); font-size: 0.85rem; background: var(--white);">
     <div class="container footer-inner" style="display: flex; justify-content: space-between; align-items: center;">
       <p>© 2026 Grupo Thera. Todos los derechos reservados.</p>
-      <p>Powered by ...</p>
+      <p>Powered by FastAPI & PostgreSQL</p>
     </div>
   </footer>
+
+  <!-- SCRIPT PARA CONECTAR EL BACKEND CON EL FRONTEND -->
+  <script>
+      async function cargarVacantes() {
+          try {
+              const response = await fetch('http://127.0.0.1:8001/api/vacantes');
+              const vacantes = await response.json();
+              
+              const container = document.getElementById('vacantes-container');
+              container.innerHTML = ''; // Limpiar mensaje de carga
+
+              if (vacantes.length === 0) {
+                  container.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No hay vacantes disponibles en este momento.</p>';
+                  return;
+              }
+
+              vacantes.forEach(vacante => {
+    const card = document.createElement('article');
+    card.style.cssText = "background: var(--white); border: 1px solid #E2E8F0; border-radius: 12px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);";
+
+    card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+            <div>
+                <span style="background: #E6FFFA; color: #0D9488; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">${vacante.departamento || 'General'}</span>
+                <h3 style="font-size: 1.5rem; color: #0F172A; margin: 8px 0 4px 0;">${vacante.titulo}</h3>
+                <div style="color: #64748B; font-size: 0.9rem;">📍 ${vacante.ubicacion || 'Puebla'}</div>
+            </div>
+            <button class="btn btn-accent" onclick="postular(${vacante.id})" style="background: #0D9488; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">Postularme →</button>
+        </div>
+
+        <div style="margin-top: 16px; border-top: 1px solid #F1F5F9; padding-top: 16px;">
+            <h4 style="color: #1E293B; font-size: 1rem; margin-bottom: 6px;">Objetivo del Puesto:</h4>
+            <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px;">${vacante.objetivo || vacante.descripcion}</p>
+
+            <h4 style="color: #1E293B; font-size: 1rem; margin-bottom: 6px;">Principales Funciones y Responsabilidades:</h4>
+            <p style="color: #475569; font-size: 0.95rem; white-space: pre-line; margin-bottom: 12px;">${vacante.funciones || ''}</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #F8FAFC; padding: 16px; border-radius: 8px; margin-top: 12px;">
+                <div>
+                    <strong style="color: #1E293B; font-size: 0.9rem;">Formación Académica:</strong>
+                    <p style="color: #475569; font-size: 0.9rem; margin: 4px 0 0 0;">${vacante.formacion_academica || 'N/A'}</p>
+                </div>
+                <div>
+                    <strong style="color: #1E293B; font-size: 0.9rem;">Formación Técnica:</strong>
+                    <p style="color: #475569; font-size: 0.9rem; margin: 4px 0 0 0;">${vacante.formacion_tecnica || 'N/A'}</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 12px; font-size: 0.9rem; color: #475569;">
+                <strong>Competencias:</strong> ${vacante.competencias || ''} <br>
+                <strong>Aptitudes:</strong> ${vacante.aptitudes || ''}
+            </div>
+        </div>
+    `;
+    container.appendChild(card);
+});
+
+
+          } catch (error) {
+              console.error('Error al cargar vacantes:', error);
+              document.getElementById('vacantes-container').innerHTML = '<p style="text-align: center; color: red;">Error al conectar con el servidor de vacantes.</p>';
+          }
+      }
+
+      window.onload = cargarVacantes;
+
+      // CORRECCIÓN AQUÍ: Cambiar el alert por la redirección al formulario
+      function postular(vacanteId) {
+          window.location.href = `detalle.html?vacante_id=${vacanteId}`;
+      }
+  </script>
 
 </body>
 </html>
